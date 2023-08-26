@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./components/head', {pageName: 'Cursos'}) %>
-
-
+<%- include('../components/head', {pageName: 'Cursos'}) %>
 <body>
+
+  <%- include('../components/navbar') %>
+
+  <main class="container mx-auto">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
+      <% for( let i = 0; i < courses.length; i++ ) { %>
+        <%- include('../components/productCard', {product: courses[i]}) %>
+      <% } %>
+    </div>
+  </main>
   
 </body>
 </html>
