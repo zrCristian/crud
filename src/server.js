@@ -9,6 +9,7 @@ app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
 app.use(morgan('tiny'));
+app.use(express.static('public'));
 
 app.use('/', router);
 
