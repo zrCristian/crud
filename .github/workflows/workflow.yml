@@ -1,5 +1,5 @@
 name: Pipeline
-on: workflow_disptach
+on: workflow_dispatch
 jobs:
   pipeline:
     runs-on: ubuntu-latest
