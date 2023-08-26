@@ -1,7 +1,7 @@
 {
   "name": "german-cloud",
   "version": "1.0.0",
-  "description": "",
+  "description": "Una tienda de cursos",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -11,9 +11,9 @@
     "watch": "npm run dev & npm run dev:tailwindcss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["tailwindcss", "express", "ejs"],
+  "author": "German Eichemberger",
+  "license": "MIT",
   "dependencies": {
     "another-validator": "^2.3.1",
     "ejs": "^3.1.9",
