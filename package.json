@@ -2,10 +2,11 @@
   "name": "german-cloud",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
+    "build:css": "npx tailwindcss -i ./src/views/css/styles.css -o ./public/css/styles.css",
     "dev:tailwindcss": "npx tailwindcss -i ./src/views/css/styles.css -o ./public/css/styles.css --watch",
     "watch": "npm run dev & npm run dev:tailwindcss",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "another-validator": "^2.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "morgan": "^1.10.0"

@@ -6,6 +6,16 @@ function listAll(req, res) {
   res.render('courses/courses', { courses });
 }
 
+function createView(req, res) {
+  res.render('courses/create');
+}
+
+function create(req, res) {
+  res.redirect('/cursos');
+}
+
 module.exports = {
   listAll,
+  createView,
+  create,
 };

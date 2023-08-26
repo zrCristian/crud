@@ -4,41 +4,48 @@
     "name": "AWS Solutions Architect Associate",
     "price": 199,
     "stars": 5,
-    "image": "saa.png"
+    "image": "saa.png",
+    "categories": ["aws", "cloud", "certificate", "aws associate"]
   },
   {
     "id": 2,
     "name": "AWS Cloud Practicioner",
     "price": 59,
     "stars": 3,
-    "image": "cpf.png"
+    "image": "cpf.png",
+    "categories": ["aws", "cloud", "certificate", "aws practicioner"]
   },
   {
     "id": 3,
     "name": "AWS Solutions Architect Professional",
     "price": 399,
     "stars": 5,
-    "image": "sap.png"
+    "image": "sap.png",
+    "categories": ["aws", "cloud", "certificate", "aws professional"]
+
   },
   {
     "id": 4,
     "name": "AWS Database Specialty",
     "price": 399,
     "stars": 5,
-    "image": "dbs.png"
+    "image": "dbs.png",
+    "categories": ["aws", "cloud", "certificate", "aws specialty"]
   },
   {
     "id": 5,
     "name": "Kubernetes Security Specialty",
     "price": 239,
     "stars": 5,
-    "image": "kss.png"
+    "image": "kss.png",
+    "categories": ["kubernetes", "certificate", "kubernetes specialty"]
   },
   {
     "id": 6,
     "name": "AWS Devops Professional",
     "price": 299,
     "stars": 5,
-    "image": "dep.png"
+    "image": "dep.png", 
+    "categories": ["aws", "cloud", "certificate", "aws professional"]
   }
 ]
