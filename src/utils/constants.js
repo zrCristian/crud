@@ -8,7 +8,10 @@ const errors = {
   negativePrice: 'El precio debe ser mayor a 0',
 };
 
+const COURSES_PHOTOS_PATH = path.resolve(__dirname, '../../public/images/courses');
+
 module.exports = {
   COURSES_PATH,
+  COURSES_PHOTOS_PATH,
   errors,
 };

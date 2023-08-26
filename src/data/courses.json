@@ -5,7 +5,8 @@
     "price": 199,
     "stars": 5,
     "image": "saa.png",
-    "categories": ["aws", "cloud", "certificate", "aws associate"]
+    "categories": ["aws", "cloud", "certificate", "aws associate"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "price": 59,
     "stars": 3,
     "image": "cpf.png",
-    "categories": ["aws", "cloud", "certificate", "aws practicioner"]
+    "categories": ["aws", "cloud", "certificate", "aws practicioner"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
     "id": 3,
@@ -21,8 +23,8 @@
     "price": 399,
     "stars": 5,
     "image": "sap.png",
-    "categories": ["aws", "cloud", "certificate", "aws professional"]
-
+    "categories": ["aws", "cloud", "certificate", "aws professional"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
     "id": 4,
@@ -30,7 +32,8 @@
     "price": 399,
     "stars": 5,
     "image": "dbs.png",
-    "categories": ["aws", "cloud", "certificate", "aws specialty"]
+    "categories": ["aws", "cloud", "certificate", "aws specialty"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
     "id": 5,
@@ -38,7 +41,8 @@
     "price": 239,
     "stars": 5,
     "image": "kss.png",
-    "categories": ["kubernetes", "certificate", "kubernetes specialty"]
+    "categories": ["kubernetes", "certificate", "kubernetes specialty"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
     "id": 6,
@@ -46,6 +50,7 @@
     "price": 299,
     "stars": 5,
     "image": "dep.png", 
-    "categories": ["aws", "cloud", "certificate", "aws professional"]
+    "categories": ["aws", "cloud", "certificate", "aws professional"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   }
 ]

@@ -7,6 +7,13 @@ function getAllCourses() {
   return courses;
 }
 
+function getCourseById(id) {
+  const courses = getAllCourses();
+
+  return courses.find((course) => course.id === id);
+}
+
 module.exports = {
   getAllCourses,
+  getCourseById,
 };
