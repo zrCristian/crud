@@ -11,6 +11,7 @@
 
     <div class="shadow-xl p-10 rounded max-w-6xl mx-auto mt-10">
       <h2 class="text-2xl mb-5">Crear un curso:</h2>
+
       <form method="post" action="/cursos/crear" enctype="multipart/form-data">
         <div class="relative z-0 w-full mb-6 group">
             <input type="text" name="name" id="name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
@@ -40,13 +41,13 @@
 
         <div class="mt-1">
           <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción del curso</label>
-          <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Descripción"></textarea>  
+          <textarea name="description" id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Descripción"></textarea>  
         </div>
 
         <div class="mt-4">
-          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Imagen</label>
-          <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="image" id="image" type="file">
-          <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">Una imagen descriptiva del curso</div>
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Imagen</label>
+          <input name="image" aria-describedby="image" id="image" type="file" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+          <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="image_help">Una imagen descriptiva del curso</div>
           <% if (typeof error !== 'undefined') { %>
             <%- include('../components/inputErrors', {error, inputName: 'image'}) %>
           <% } %>
@@ -57,6 +58,7 @@
         </div>
 
       </form>
+
     </div>
 
   </main>

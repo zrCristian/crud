@@ -49,7 +49,7 @@
     "name": "AWS Devops Professional",
     "price": 299,
     "stars": 5,
-    "image": "dep.png", 
+    "image": "dep.png",
     "categories": ["aws", "cloud", "certificate", "aws professional"],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
@@ -58,7 +58,7 @@
     "name": "AWS Developer Associate",
     "price": 199,
     "stars": 5,
-    "image": null, 
+    "image": null,
     "categories": ["aws", "cloud", "certificate", "aws associate"],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
@@ -115,8 +115,8 @@
     "image": null,
     "categories": ["comptia", "cloud", "certificate"],
     "description": "CompTIA Cloud+ covers the increased diversity of knowledge, skills and abilities required of system administrators to validate what is necessary to perform effectively in data center jobs. It includes the new technologies to support the changing cloud market."
-},
-{
+  },
+  {
     "id": 14,
     "name": "Python for AWS with Boto3",
     "price": 179,
@@ -124,5 +124,5 @@
     "image": null,
     "categories": ["python", "aws", "boto3", "development"],
     "description": "Delve into the world of AWS automation with Python's Boto3 library. From setting up AWS resources to querying and maintaining them, this course provides a comprehensive insight into how Python can be used to manage AWS resources effectively and efficiently."
-}
+  }
 ]

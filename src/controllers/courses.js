@@ -1,5 +1,6 @@
 const { getCourseById, getPaginatedCourses, getAllCourses } = require('../data/courses');
 const { defaultValues } = require('../utils/constants');
+const { writeJsonWithNewData } = require('../utils/json');
 
 function listAll(req, res) {
   const page = req.query.page ? (+(req.query.page) - 1) : 0;
@@ -28,7 +29,25 @@ function createView(req, res) {
 }
 
 function create(req, res) {
-  console.log(req.body);
+  const {
+    name, description, price, duration,
+  } = req.body;
+
+  const newCourse = {
+    id: new Date().getTime(),
+    name,
+    description,
+    price: +price,
+    duration: +duration,
+    image: req.file.filename,
+    stars: 0,
+  };
+
+  const courses = getAllCourses();
+  courses.push(newCourse);
+
+  writeJsonWithNewData('courses.json', JSON.stringify(courses));
+
   res.redirect('/cursos');
 }
 

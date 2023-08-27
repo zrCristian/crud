@@ -1,5 +1,7 @@
-const { COURSES_PATH } = require('../utils/constants');
+const path = require('path');
 const { getDataByJsonName } = require('../utils/json');
+
+const COURSES_PATH = path.resolve(__dirname, './courses.json');
 
 function getAllCourses() {
   const courses = getDataByJsonName(COURSES_PATH);

@@ -1,20 +1,22 @@
 const { Router } = require('express');
 const multer = require('multer');
 const {
-  listAll, createView, create, getById,
+  listAll,
+  createView,
+  create,
+  getById,
 } = require('../controllers/courses');
-const validateCourse = require('../middlewares/validateCourse');
-const { COURSES_PHOTOS_PATH } = require('../utils/constants');
 
 const router = Router();
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, COURSES_PHOTOS_PATH);
+    cb(null, './public/images/courses');
   },
   filename(req, file, cb) {
     const extension = file.originalname.split('.')[1];
-    cb(null, `${file.filename + new Date().getTime()}./${extension}`);
+    console.log(file);
+    cb(null, `${file.fieldname}-${new Date().getTime()}.${extension}`);
   },
 });
 
