@@ -2,14 +2,15 @@
 <html lang="en">
 
 <%- include('../components/head', {pageName: 'Cursos'}) %>
-<body>
+
+<%- include('../custom/body') %>
 
   <%- include('../components/navbar') %>
 
   <div class="flex justify-center items-center flex-col h-96 mb-10">
     <div class="w-full h-screen bg-[url('/images/util/cloud.jpg')] bg-cover bg-center">
-        <div class="w-full h-full flex  justify-center items-center backdrop-brightness-50">
-          <span class="text-white text-4xl w-1/2 text-center">Become an expert in the cloud</span>
+        <div class="w-full h-full flex  justify-center items-center backdrop-brightness-75">
+          <span class="text-white text-4xl w-1/2 text-center">Convertite en un experto en la nube</span>
         </div>
     </div>
   </div>
@@ -20,7 +21,42 @@
         <%- include('../components/productCard', {product: courses[i]}) %>
       <% } %>
     </div>
+
+    <div class="flex justify-center mt-10 mb-10">
+      <nav aria-label="Paginación">
+        <ul class="inline-flex -space-x-px text-base h-10">
+          <li>
+            <% if (metadata.page !== 1) { %>
+              <a href="/cursos?page=<%= metadata.page - 1 %>"  class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previo</a>
+            <% } else { %>
+              <a href="javascript:void(0);"  class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previo</a>
+            <% } %>
+          </li>
+          <% for( let i = 1; i <= metadata.numberOfPages; i++ ) { %>
+            <% if (i === metadata.page) { %>
+              <li>
+                <a href="#" aria-current="page" class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"><%= i %></a>
+              </li>
+            <% } else { %>
+              <li>
+                <a href="/cursos?page=<%= i %>" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><%= i %></a>
+              </li> 
+            <% } %>
+          <% } %>
+          <li>
+            <% if (metadata.page === metadata.numberOfPages) { %>
+              <a href="javascript:void(0);" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Siguiente</a>
+            <% } else { %>
+              <a href="/cursos?page=<%= metadata.page + 1 %>" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Siguiente</a>
+            <% } %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
   </main>
+
+  <%- include('../components/footer') %>
   
 </body>
 </html>

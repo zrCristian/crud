@@ -7,6 +7,14 @@ function getAllCourses() {
   return courses;
 }
 
+function getPaginatedCourses(pageNumber = 0, coursesPerPage = 12) {
+  const courses = getAllCourses();
+  const firstIndex = pageNumber * coursesPerPage;
+  const lastIndex = Math.min((pageNumber + 1) * coursesPerPage, courses.length);
+
+  return courses.slice(firstIndex, lastIndex);
+}
+
 function getCourseById(id) {
   const courses = getAllCourses();
 
@@ -16,4 +24,5 @@ function getCourseById(id) {
 module.exports = {
   getAllCourses,
   getCourseById,
+  getPaginatedCourses,
 };

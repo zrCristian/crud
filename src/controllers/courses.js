@@ -1,9 +1,19 @@
-const { getAllCourses, getCourseById } = require('../data/courses');
+const { getCourseById, getPaginatedCourses, getAllCourses } = require('../data/courses');
+const { defaultValues } = require('../utils/constants');
 
 function listAll(req, res) {
-  const courses = getAllCourses();
+  const page = req.query.page ? (+(req.query.page) - 1) : 0;
+  const courses = getPaginatedCourses(page);
+  const totalNumberOfCourses = getAllCourses().length;
+  const numberOfPages = Math.ceil(totalNumberOfCourses / defaultValues.coursesPerPage);
 
-  res.render('courses/courses', { courses });
+  res.render('courses/courses', {
+    courses,
+    metadata: {
+      numberOfPages,
+      page: page + 1,
+    },
+  });
 }
 
 function getById(req, res) {

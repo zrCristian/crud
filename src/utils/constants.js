@@ -10,8 +10,13 @@ const errors = {
 
 const COURSES_PHOTOS_PATH = path.resolve(__dirname, '../../public/images/courses');
 
+const defaultValues = {
+  coursesPerPage: 12,
+};
+
 module.exports = {
   COURSES_PATH,
   COURSES_PHOTOS_PATH,
   errors,
+  defaultValues,
 };
