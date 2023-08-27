@@ -2,9 +2,16 @@ const express = require('express');
 const router = require('./routes');
 const coursesRouter = require('./routes/courses');
 const usersRouter = require('./routes/users');
+const { BUTTON_CLASSES } = require('./views/css/constants');
 
 const app = express();
 const PORT = 8080;
+
+app.locals = {
+  styles: {
+    buttonColor: BUTTON_CLASSES,
+  },
+};
 
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
