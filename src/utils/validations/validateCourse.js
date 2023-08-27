@@ -2,8 +2,6 @@ const { Validator, NumberValidator, SchemaValidator } = require('another-validat
 const { errors } = require('../constants');
 
 function validateCourse(course) {
-  console.log(course);
-
   const nameValidator = new Validator()
     .minLength(3, errors.minLengthName)
     .maxLength(100, errors.maxLengthName)
