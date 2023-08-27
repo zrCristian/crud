@@ -16,6 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', router);
 app.use('/cursos', coursesRouter);
 
+app.get('*', (req, res) => {
+  res.status(404).render('404');
+});
+
 app.listen(PORT, () => {
   console.log(`[server]: running on port: ${PORT}`);
 });
