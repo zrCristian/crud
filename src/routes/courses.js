@@ -8,6 +8,4 @@ const {
 
 const router = Router();
 
-router.get('/', listAll);
-
 module.exports = router;
