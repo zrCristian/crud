@@ -29,7 +29,10 @@ function getCourseById(id) {
 
 function saveCourse(course, imageFileName) {
   const {
-    name, description, price, duration,
+    name,
+    description,
+    price,
+    duration,
   } = course;
 
   const newCourse = {
