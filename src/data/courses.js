@@ -1,5 +1,5 @@
 const path = require('path');
-const { getDataByJsonName } = require('../utils/json');
+const { getDataByJsonName, writeJsonWithNewData } = require('../utils/json');
 
 const COURSES_PATH = path.resolve(__dirname, './courses.json');
 
@@ -23,8 +23,30 @@ function getCourseById(id) {
   return courses.find((course) => course.id === id);
 }
 
+function saveCourse(course, imageFileName) {
+  const {
+    name, description, price, duration,
+  } = course;
+
+  const newCourse = {
+    id: new Date().getTime(),
+    name,
+    description,
+    price: +price,
+    duration: +duration,
+    image: imageFileName,
+    stars: 0,
+  };
+
+  const courses = getAllCourses();
+  courses.push(newCourse);
+
+  writeJsonWithNewData('courses.json', JSON.stringify(courses));
+}
+
 module.exports = {
   getAllCourses,
   getCourseById,
+  saveCourse,
   getPaginatedCourses,
 };
