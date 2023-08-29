@@ -1,5 +1,8 @@
 const {
-  getCourseById, getPaginatedCourses, getAllCourses, saveCourse,
+  getCourseById,
+  getPaginatedCourses,
+  getAllCourses,
+  saveCourse,
 } = require('../data/courses');
 const { defaultValues } = require('../utils/constants');
 

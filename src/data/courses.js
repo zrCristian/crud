@@ -1,5 +1,8 @@
 const path = require('path');
-const { getDataByJsonName, writeJsonWithNewData } = require('../utils/json');
+const {
+  getDataByJsonName,
+  writeJsonWithNewData,
+} = require('../utils/json');
 
 const COURSES_PATH = path.resolve(__dirname, './courses.json');
 

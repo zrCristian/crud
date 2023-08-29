@@ -1,5 +1,8 @@
 const path = require('path');
-const { writeJsonWithNewData, getDataByJsonName } = require('../utils/json');
+const {
+  writeJsonWithNewData,
+  getDataByJsonName,
+} = require('../utils/json');
 
 const USER_DATA_PATH = path.resolve(__dirname, './users.json');
 
