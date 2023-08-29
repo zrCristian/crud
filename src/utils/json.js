@@ -10,7 +10,7 @@ function getDataByJsonName(fileName) {
 }
 
 function writeJsonWithNewData(fileName, newData) {
-  fs.writeFileSync(`${DATA_PATH}/${fileName}`, newData);
+  fs.writeFileSync(`${DATA_PATH}/json/${fileName}`, newData);
 }
 
 module.exports = {

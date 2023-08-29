@@ -4,7 +4,7 @@ const {
   getDataByJsonName,
 } = require('../utils/json');
 
-const USER_DATA_PATH = path.resolve(__dirname, './users.json');
+const USER_DATA_PATH = path.resolve(__dirname, './json/users.json');
 
 function getAllUsers() {
   return getDataByJsonName(USER_DATA_PATH);
