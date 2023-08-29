@@ -4,7 +4,7 @@
 <%- include('../custom/body') %>
   <%- include('../components/navbar') %>
 
-  <main class="container mx-auto">
+  <main class="container mx-auto mb-36">
     <div class="flex mt-24">
       <div class="self-center w-6/12 justify-center items-center flex h-96">
         <img src="/images/courses/<%= course.image %>" alt="<%= course.name %>">
@@ -21,6 +21,8 @@
       </div>
     </div>
   </main>
+
+  <%- include('../components/footer') %>
 
 </body>
 </html>
