@@ -3,6 +3,7 @@ const {
   getDataByJsonName,
   writeJsonWithNewData,
 } = require('../utils/json');
+const { defaultValues } = require('../utils/constants');
 
 const COURSES_PATH = path.resolve(__dirname, './json/courses.json');
 
@@ -12,7 +13,7 @@ function getAllCourses() {
   return courses;
 }
 
-function getPaginatedCourses(pageNumber = 0, coursesPerPage = 12) {
+function getPaginatedCourses(pageNumber = 0, coursesPerPage = defaultValues.coursesPerPage) {
   const courses = getAllCourses();
   const firstIndex = pageNumber * coursesPerPage;
   const lastIndex = Math.min((pageNumber + 1) * coursesPerPage, courses.length);
