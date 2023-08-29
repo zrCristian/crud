@@ -20,7 +20,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/cursos', coursesRouter);
-app.use('/users', usersRouter);
+app.use('/usuarios', usersRouter);
 app.use('/', router);
 
 app.get('*', (req, res) => {

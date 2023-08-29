@@ -3,7 +3,15 @@
     "id": 1,
     "name": "German",
     "lastname": "Eichemberger",
-    "email": "test@mail.com", 
+    "email": "test@mail.com",
     "password": "abretesesamo"
+  },
+  {
+    "id": 1693299874900,
+    "name": "German",
+    "email": "mail23@test.com",
+    "lastname": "bruno",
+    "password": "12345",
+    "sendSpam": true
   }
 ]
