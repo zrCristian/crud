@@ -1,7 +1,12 @@
 <head>
+  <meta name="author" content="German Eichemberger">
+  <meta name="language" content="es">
+  <meta property="og:title" content="<%= pageName %>">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
   <link rel="preconnect" href="https://fonts.gstatic.com"> 
   <title><%= pageName %></title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -11,5 +16,6 @@
       <link href="<%= link.href %>" rel="<%= link.rel %>" />
     <% }) %>
   <% } %>
+
 
 </head>
