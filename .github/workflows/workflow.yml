@@ -1,8 +1,15 @@
-name: Pipeline
+name: eslint
 on: 
   push:
     branches:
       - 'main'
+  pull_request:
+    types: 
+      - opened
+    branches: 
+      - 'main'
+    paths:
+      - '**.js'
 jobs:
   pipeline:
     runs-on: ubuntu-latest
