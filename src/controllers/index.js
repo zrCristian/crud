@@ -10,8 +10,13 @@ function registerView(req, res) {
   res.render('register');
 }
 
+function cart(req, res) {
+  res.render('cart');
+}
+
 module.exports = {
   index,
   loginView,
   registerView,
+  cart,
 };
