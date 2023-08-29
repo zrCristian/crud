@@ -6,7 +6,18 @@ const errors = {
     maxLengthName: 'El curso solo puede tener hasta 100 caracteres',
     negativePrice: 'El precio debe ser mayor a 0',
   },
-  users: {},
+  users: {
+    minLengthName: 'El nombre debe tener al menos 3 caracteres',
+    maxLengthName: 'El nombre solo puede tener hasta 100 caracteres',
+  },
+  password: {
+    minLength: 'La contraseña debe tener al menos 6 caracteres',
+    maxLength: 'La conrtaseña no puede tener mas de 20 caracteres',
+    requiresNumber: 'La contraseña debe poseer al menos un número',
+    requiresUppercase: 'La contraseña debe tener al menos una mayúscula',
+    requiresLowercase: 'La contraseña debe tener al menos una minúscula',
+    requiresSpecialCharacter: 'La contraseña debe tener al menos un carácter especial',
+  },
 };
 
 const COURSES_PHOTOS_PATH = path.resolve(__dirname, '../../public/images/courses');
