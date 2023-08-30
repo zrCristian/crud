@@ -5,8 +5,12 @@ const {
   registerView,
   cart,
 } = require('../controllers');
+const { register } = require('../controllers/users');
+const validateNewUser = require('../middlewares/userValidation');
 
 const router = Router();
+
+router.post('/registro', validateNewUser, register);
 
 router.get('/login', loginView);
 router.get('/registro', registerView);

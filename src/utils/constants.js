@@ -17,6 +17,7 @@ const errors = {
     requiresUppercase: 'La contraseña debe tener al menos una mayúscula',
     requiresLowercase: 'La contraseña debe tener al menos una minúscula',
     requiresSpecialCharacter: 'La contraseña debe tener al menos un carácter especial',
+    confirmation: 'Las contraseñas no coinciden',
   },
 };
 

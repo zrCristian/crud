@@ -1,6 +1,7 @@
 const { saveUser, getUserByEmail } = require('../data/users');
 
 function register(req, res) {
+  console.log(req.errors);
   const user = req.body;
   saveUser(user);
 
