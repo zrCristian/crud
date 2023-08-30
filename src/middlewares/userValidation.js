@@ -3,7 +3,12 @@ const { validateUser, userValidator } = require('../utils/validations/validateUs
 
 function validateNewUser(req, res, next) {
   const doPasswordMatch = req.body.password === req.body.passwordConfirmation;
-  userValidator.schema.password.addRule(() => doPasswordMatch, errors.password.confirmation);
+
+  userValidator
+    .schema
+    .password
+    .addRule(() => doPasswordMatch, errors.password.confirmation);
+
   try {
     validateUser(req.body);
   } catch (e) {
