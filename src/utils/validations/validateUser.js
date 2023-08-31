@@ -16,28 +16,32 @@ const emailValidator = new Validator()
   .notNull()
   .addRule((email) => isEmail(email));
 
-const passwordValidator = new Validator()
-  .notBlank()
-  .notNull()
-  .minLength(6, errors.password.minLength)
-  .maxLength(20, errors.password.minLength)
-  .requireLowercase(errors.password.requiresLowercase)
-  .requireUppercase(errors.password.requiresUppercase)
-  .requireNumber(errors.password.requiresNumber)
-  .requireSpecialCharacter(errors.password.requiresSpecialCharacter);
+function buildPasswordValidator(user) {
+  const passwordValidator = new Validator()
+    .notBlank()
+    .notNull()
+    .minLength(6, errors.password.minLength)
+    .maxLength(20, errors.password.minLength)
+    .requireLowercase(errors.password.requiresLowercase)
+    .requireUppercase(errors.password.requiresUppercase)
+    .requireNumber(errors.password.requiresNumber)
+    .requireSpecialCharacter(errors.password.requiresSpecialCharacter)
+    .addRule((p) => p === user.passwordConfirmation, errors.password.confirmation);
 
-const userValidator = new SchemaValidator({
-  name: nameValidator,
-  lastname: nameValidator,
-  email: emailValidator,
-  password: passwordValidator,
-});
+  return passwordValidator;
+}
 
-function validateUser(user) {
-  userValidator.validate(user);
+function buildValidator(user) {
+  const userValidator = new SchemaValidator({
+    name: nameValidator,
+    lastname: nameValidator,
+    email: emailValidator,
+    password: buildPasswordValidator(user),
+  });
+
+  return userValidator;
 }
 
 module.exports = {
-  userValidator,
-  validateUser,
+  buildValidator,
 };

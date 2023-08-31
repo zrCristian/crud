@@ -1,19 +1,14 @@
-const { errors } = require('../utils/constants');
-const { validateUser, userValidator } = require('../utils/validations/validateUser');
+const { buildValidator } = require('../utils/validations/validateUser');
 
 function validateNewUser(req, res, next) {
-  const doPasswordMatch = req.body.password === req.body.passwordConfirmation;
-
-  userValidator
-    .schema
-    .password
-    .addRule(() => doPasswordMatch, errors.password.confirmation);
+  const user = req.body;
+  const validator = buildValidator(user);
 
   try {
-    validateUser(req.body);
+    validator.validate();
   } catch (e) {
     res.render('register', {
-      errors: userValidator.getErrors(req.body),
+      errors: validator.getErrors(user),
     });
 
     return;
