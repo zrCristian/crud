@@ -55,7 +55,7 @@
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
               />
 
-              <% if (typeof errors !== 'undefined' && errors.name.length > 0) { %>
+              <% if (typeof errors !== 'undefined' && errors.name?.length > 0) { %>
                <%- include('./components/formErrors', {errors: errors.name}) %>
               <% } %>
 
@@ -76,7 +76,7 @@
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
               />
 
-              <% if (typeof errors !== 'undefined' && errors.lastname.length > 0) { %>
+              <% if (typeof errors !== 'undefined' && errors.lastname?.length > 0) { %>
                 <%- include('./components/formErrors', {errors: errors.lastname}) %>
               <% } %>
 
@@ -94,7 +94,7 @@
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
               />
 
-              <% if (typeof errors !== 'undefined' && errors.email.length > 0) { %>
+              <% if (typeof errors !== 'undefined' && errors.email?.length > 0) { %>
                 <%- include('./components/formErrors', {errors: errors.email}) %>
               <% } %>
 
@@ -133,7 +133,7 @@
             </div>
 
             <div class="col-span-6">
-              <% if (typeof errors !== 'undefined' && errors.password.length > 0) { %>
+              <% if (typeof errors !== 'undefined' && errors.password?.length > 0) { %>
                 <%- include('./components/formErrors', {errors: errors.password }) %>
               <% } %>
             </div>
