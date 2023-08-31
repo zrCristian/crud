@@ -4,6 +4,7 @@ const {
   isEmail,
 } = require('another-validator');
 const { errors } = require('../constants');
+const usersData = require('../../data/json/users.json');
 
 const nameValidator = new Validator()
   .notNull()
@@ -11,13 +12,20 @@ const nameValidator = new Validator()
   .maxLength(100, errors.courses.maxLengthName)
   .notEmpty(errors.courses.minLengthName);
 
-const emailValidator = new Validator()
-  .notEmpty()
-  .notNull()
-  .addRule((email) => isEmail(email));
+function buildEmailValidator() {
+  return new Validator()
+    .notEmpty()
+    .notNull()
+    .addRule((email) => isEmail(email))
+    .addRule((email) => {
+      const isUnique = usersData.find((u) => u.email === email) === undefined;
+
+      return isUnique;
+    }, errors.users.uniqueEmail);
+}
 
 function buildPasswordValidator(user) {
-  const passwordValidator = new Validator()
+  return new Validator()
     .notBlank()
     .notNull()
     .minLength(6, errors.password.minLength)
@@ -27,15 +35,13 @@ function buildPasswordValidator(user) {
     .requireNumber(errors.password.requiresNumber)
     .requireSpecialCharacter(errors.password.requiresSpecialCharacter)
     .addRule((p) => p === user.passwordConfirmation, errors.password.confirmation);
-
-  return passwordValidator;
 }
 
 function buildValidator(user) {
   const userValidator = new SchemaValidator({
     name: nameValidator,
     lastname: nameValidator,
-    email: emailValidator,
+    email: buildEmailValidator(),
     password: buildPasswordValidator(user),
   });
 

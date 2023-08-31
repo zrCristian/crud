@@ -9,6 +9,7 @@ const errors = {
   users: {
     minLengthName: 'El nombre debe tener al menos 3 caracteres',
     maxLengthName: 'El nombre solo puede tener hasta 100 caracteres',
+    uniqueEmail: 'Ya existe un usuario con ese mail',
   },
   password: {
     minLength: 'La contraseña debe tener al menos 6 caracteres',

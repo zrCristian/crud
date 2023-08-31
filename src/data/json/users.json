@@ -1,1 +1,17 @@
-[{"id":1,"name":"German","lastname":"Eichemberger","email":"test@mail.com","password":"abretesesamo"},{"id":1693299874900,"name":"German","email":"mail23@test.com","lastname":"bruno","password":"12345","sendSpam":true},{"id":1693434838494,"name":"","email":"","lastname":"","password":"","sendSpam":false},{"id":1693434866076,"name":"","email":"","lastname":"","password":"","sendSpam":false},{"id":1693435129682,"name":"","email":"","lastname":"","password":"","sendSpam":false},{"id":1693435297389,"name":"","email":"","lastname":"","password":"","sendSpam":false}]
+[
+  {
+    "id": 1,
+    "name": "German",
+    "lastname": "Eichemberger",
+    "email": "test@mail.com",
+    "password": "abretesesamo"
+  },
+  {
+    "id": 1693299874900,
+    "name": "German",
+    "email": "mail23@test.com",
+    "lastname": "bruno",
+    "password": "12345",
+    "sendSpam": true
+  }
+]
