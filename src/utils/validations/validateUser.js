@@ -16,6 +16,7 @@ const nameValidator = new Validator()
 function buildEmailValidator() {
   return new Validator()
     .notBlank(errors.notBlank)
+    .isEmail(errors.isEmail)
     .notNull(errors.notNull)
     .addRule((email) => isEmail(email))
     .addRule((email) => {
