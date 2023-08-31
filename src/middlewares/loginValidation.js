@@ -7,7 +7,7 @@ function validateLogin(req, res, next) {
     loginValidator.validate(loginData);
   } catch (e) {
     const errors = loginValidator.getErrors(loginData);
-    console.log(errors);
+
     res.render('login', {
       errors,
     });
