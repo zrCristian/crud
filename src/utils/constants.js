@@ -1,6 +1,8 @@
 const path = require('path');
 
 const errors = {
+  notNull: 'el campo no puede ser nulo',
+  notBlank: 'el campo no puede estar vacío',
   courses: {
     minLengthName: 'El curso debe tener al menos 3 caracteres',
     maxLengthName: 'El curso solo puede tener hasta 100 caracteres',

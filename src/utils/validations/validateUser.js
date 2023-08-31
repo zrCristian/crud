@@ -7,15 +7,16 @@ const { errors } = require('../constants');
 const usersData = require('../../data/json/users.json');
 
 const nameValidator = new Validator()
-  .notNull()
+  .notNull(errors.notNull)
+  .notBlank(errors.notBlank)
   .minLength(3, errors.users.minLengthName)
   .maxLength(100, errors.courses.maxLengthName)
   .notEmpty(errors.courses.minLengthName);
 
 function buildEmailValidator() {
   return new Validator()
-    .notEmpty()
-    .notNull()
+    .notBlank(errors.notBlank)
+    .notNull(errors.notNull)
     .addRule((email) => isEmail(email))
     .addRule((email) => {
       const isUnique = usersData.find((u) => u.email === email) === undefined;
@@ -26,8 +27,8 @@ function buildEmailValidator() {
 
 function buildPasswordValidator(user) {
   return new Validator()
-    .notBlank()
-    .notNull()
+    .notBlank(errors.notBlank)
+    .notNull(errors.notNull)
     .minLength(6, errors.password.minLength)
     .maxLength(20, errors.password.minLength)
     .requireLowercase(errors.password.requiresLowercase)
