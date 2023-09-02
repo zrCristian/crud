@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const { saveUser, getUserByEmail, getUserById } = require('../data/users');
 const { errors } = require('../utils/constants');
+const UnauthorizedException = require('../errors/notallowed');
 
 function register(req, res) {
   console.log(req.errors);
@@ -30,6 +31,10 @@ function login(req, res) {
 function profile(req, res, next) {
   const id = +req.params.id;
   try {
+    if (id !== req.session.userId && !req.session.isAdmin) {
+      throw new UnauthorizedException();
+    }
+
     const user = getUserById(id);
 
     res.render('users/profile', { user });

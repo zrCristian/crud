@@ -33,7 +33,7 @@ app.get('*', (req, res) => {
 });
 
 app.use((err, req, res, next) => {
-  if (err.status === 404) {
+  if (err.status === 404 || err.status === 401) {
     return res.status(404).render('404');
   }
 
