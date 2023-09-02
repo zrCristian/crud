@@ -18,6 +18,8 @@ function login(req, res) {
 
   if (user && bcrypt.compareSync(loginData.password, user.password)) {
     req.session.userId = user.id;
+    req.session.isAdmin = user.isAdmin;
+
     res.redirect('/');
   } else {
     res.render('login', {
