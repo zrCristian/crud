@@ -4,6 +4,7 @@ const {
   writeJsonWithNewData,
   getDataByJsonName,
 } = require('../utils/json');
+const NotFoundException = require('../errors/error');
 
 const USER_DATA_PATH = path.resolve(__dirname, './json/users.json');
 
@@ -41,7 +42,18 @@ function getUserByEmail(email) {
   return getAllUsers().find((user) => user.email === email);
 }
 
+function getUserById(id) {
+  const user = getAllUsers().find((u) => u.id === id);
+
+  if (!user) {
+    throw new NotFoundException();
+  }
+
+  return user;
+}
+
 module.exports = {
   saveUser,
   getUserByEmail,
+  getUserById,
 };

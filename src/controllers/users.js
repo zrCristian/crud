@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
-const { saveUser, getUserByEmail } = require('../data/users');
+const { saveUser, getUserByEmail, getUserById } = require('../data/users');
 const { errors } = require('../utils/constants');
+const NotFoundException = require('../errors/error');
 
 function register(req, res) {
   console.log(req.errors);
@@ -27,7 +28,19 @@ function login(req, res) {
   }
 }
 
+function profile(req, res, next) {
+  const id = +req.params.id;
+  try {
+    const user = getUserById(id);
+
+    res.render('users/profile', { user });
+  } catch (e) {
+    next(e);
+  }
+}
+
 module.exports = {
   register,
   login,
+  profile,
 };

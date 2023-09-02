@@ -30,6 +30,18 @@ app.get('*', (req, res) => {
   res.status(404).render('404');
 });
 
+app.use((err, req, res, next) => {
+  if (err.status === 404) {
+    return res.status(404).render('404');
+  }
+
+  if (err) {
+    return res.status(err.status || 500).json(err.message);
+  }
+
+  return next();
+});
+
 app.listen(PORT, () => {
   console.log(`[server]: running on port: ${PORT}`);
 });

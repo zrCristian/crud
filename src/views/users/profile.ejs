@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../components/head', {pageName: 'Perfil'}) %>
+
+
+
+<%- include('../custom/body') %>
+
+  <%- include('../components/navbar') %>
+
+
+  <main class="container mx-auto pb-24">
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 bg-white my-10 rounded">
+      <div class="h-full sm:mt-10">
+
+      <div class="flex justify-center items-center h-full">
+        <img src="/images/users/german.jpg" alt="imagén de perfil" class="rounded-full max-h-[250px] min-h-[250px]">
+      </div>
+        
+      </div>
+
+      <div class="lg:col-span-2 p-10">
+
+        <div class="mb-5 sm:flex gap-4">
+          <article class="rounded-lg border border-gray-100 bg-white p-6 inline-block min-w-[200px]">
+            <div>
+              <p class="text-sm text-gray-500">Cursos terminados</p>
+          
+              <p class="text-2xl font-medium text-gray-900">12</p>
+            </div>
+          
+            <div class="mt-1 flex gap-1 text-green-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                />
+              </svg>
+          
+              <p class="flex gap-2 text-xs">
+                <span class="font-medium"> 67.81% </span>
+              </p>
+            </div>
+          </article>
+          
+          <article class="rounded-lg border border-gray-100 bg-white p-6 inline-block min-w-[200px]">
+            <div>
+              <p class="text-sm text-gray-500">Horas cursadas</p>
+          
+              <p class="text-2xl font-medium text-gray-900">168</p>
+            </div>
+          
+            <div class="mt-1 flex gap-1 text-red-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
+                />
+              </svg>
+          
+              <p class="flex gap-2 text-xs">
+                <span class="font-medium"> 9.81% </span>
+              </p>
+            </div>
+          </article>
+
+          <article class="rounded-lg border border-gray-100 bg-white p-6 inline-block min-w-[200px]">
+            <div>
+              <p class="text-sm text-gray-500">Certificaciones</p>
+          
+              <p class="text-2xl font-medium text-gray-900">7</p>
+            </div>
+          
+            <div class="mt-1 flex gap-1 text-red-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
+                />
+              </svg>
+          
+              <p class="flex gap-2 text-xs">
+                <span class="font-medium"> 9.81% </span>
+              </p>
+            </div>
+          </article>
+        </div>
+
+
+        <div class="flow-root">
+          <dl class="-my-3 divide-y divide-gray-100 text-sm">
+            <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+              <dt class="font-medium text-gray-900">Género</dt>
+              <dd class="text-gray-700 sm:col-span-2"> <%= user.gender %> </dd>
+            </div>
+        
+            <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+              <dt class="font-medium text-gray-900">Nombre</dt>
+              <dd class="text-gray-700 sm:col-span-2"><%= user.name %></dd>
+            </div>
+
+            <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+              <dt class="font-medium text-gray-900">Apellido</dt>
+              <dd class="text-gray-700 sm:col-span-2"><%= user.lastname %></dd>
+            </div>
+        
+            <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+              <dt class="font-medium text-gray-900">Mail</dt>
+              <dd class="text-gray-700 sm:col-span-2"><%= user.email %></dd>
+            </div>
+        
+            <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+              <dt class="font-medium text-gray-900">Recibir notificaciones</dt>
+              <dd class="text-gray-700 sm:col-span-2"><%= user.sendSpam ? 'Si' : 'No' %></dd>
+            </div>
+        
+          </dl>
+        </div>
+
+        <hr class="mt-5">
+
+        <div class="flex gap-4 mt-8 sm:justify-center">
+          <div class="">                
+            <button class="sm:min-w-[200px] text-sm text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg px-10 py-2.5 text-center">
+            Editar
+            </>
+          </div>
+          <div class="">                
+            <button class="sm:min-w-[200px] text-sm text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg px-10 py-2.5 text-center">
+              Borrar cuenta
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <%- include('../components/footer') %>
+
+</body>
+</html>
