@@ -1,7 +1,6 @@
 const bcrypt = require('bcryptjs');
 const { saveUser, getUserByEmail, getUserById } = require('../data/users');
 const { errors } = require('../utils/constants');
-const NotFoundException = require('../errors/error');
 
 function register(req, res) {
   console.log(req.errors);
