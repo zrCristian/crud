@@ -28,6 +28,10 @@
             <% if (typeof errors !== 'undefined' && errors.email?.length > 0) { %>
               <%- include('./components/formErrors', {errors: errors.email }) %>
             <% } %>
+
+            <% if (typeof errors !== 'undefined' && errors.login?.length > 0) { %>
+              <%- include('./components/formErrors', {errors: errors.login }) %>
+            <% } %>
           </div>
   
           <div class="mt-4">

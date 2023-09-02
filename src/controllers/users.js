@@ -1,4 +1,6 @@
+const bcrypt = require('bcryptjs');
 const { saveUser, getUserByEmail } = require('../data/users');
+const { errors } = require('../utils/constants');
 
 function register(req, res) {
   console.log(req.errors);
@@ -13,13 +15,16 @@ function login(req, res) {
 
   const user = getUserByEmail(loginData.email);
 
-  if (user.password === loginData.password) {
-    console.log('inicia sesión');
+  if (user && bcrypt.compareSync(loginData.password, user.password)) {
+    req.session.userMail = user.email;
+    res.redirect('/');
   } else {
-    console.log('no inicia sesión');
+    res.render('login', {
+      errors: {
+        login: [errors.login],
+      },
+    });
   }
-
-  res.redirect('/');
 }
 
 module.exports = {

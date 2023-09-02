@@ -1,41 +1,10 @@
 [
   {
-    "id": 1,
-    "name": "German",
-    "lastname": "Eichemberger",
-    "email": "test@mail.com",
-    "password": "abretesesamo"
-  },
-  {
-    "id": 1693299874900,
-    "name": "German",
-    "email": "mail23@test.com",
-    "lastname": "bruno",
-    "password": "12345",
-    "sendSpam": true
-  },
-  {
-    "id": 1693672260250,
+    "id": 1693673408785,
     "name": "german",
-    "email": "germaneichemberger@gmail.com",
-    "lastname": "bruno",
-    "password": "$2a$10$DdKSvmH/mLi1Sv0v4fBghull6WEcTEv84m9ybp5aUQL1ABH12hucu",
-    "sendSpam": false
-  },
-  {
-    "id": 1693672576185,
-    "name": "nuevo",
-    "email": "nuevo@user.com",
-    "lastname": "user",
-    "password": "$2a$10$We/bvrohaFjZS/7Uhefnw.qhO2/As137PhxVOVgzcaOIC9tPb5GDu",
-    "sendSpam": false
-  },
-  {
-    "id": 1693672603131,
-    "name": "juan",
-    "email": "juan@carlos.com",
-    "lastname": "carlos",
-    "password": "$2a$10$rJmAiHUoz8fr/glIHbDGteSy4XDgi9v1cMRa0AxFqi/knn2Ja62Yu",
+    "email": "german@test.com",
+    "lastname": "eichemberger",
+    "password": "$2a$10$eGkFOHoEbbs4y/WbtrCC2uYmmGMxg8AyxSjfnvzbYZKQc4OdBWIG.",
     "sendSpam": false
   }
 ]
