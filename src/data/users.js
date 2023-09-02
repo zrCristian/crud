@@ -14,12 +14,14 @@ function getAllUsers() {
 function saveUser(user) {
   const id = new Date().getTime();
   const {
-    name, password, lastname, email,
+    name,
+    password,
+    lastname,
+    email,
   } = user;
+
   const sendSpam = user.sendSpam === 'on';
-
   const hashedPassword = bcrypt.hashSync(password, 10);
-
   const users = getAllUsers();
 
   users.push({
