@@ -7,6 +7,17 @@
     "password": "$2a$10$eGkFOHoEbbs4y/WbtrCC2uYmmGMxg8AyxSjfnvzbYZKQc4OdBWIG.",
     "sendSpam": false,
     "isAdmin": true,
-    "gender": " - "
+    "gender": " - ",
+    "image": "german"
+  },
+  {
+    "id": 2,
+    "name": "cosmos",
+    "email": "cosmos@kramerica.com",
+    "lastname": "kramer",
+    "password": "$2a$10$tnIDl/waD4aU7RgV8OeG4e0SvMN3axkYKDfkdllZj4ht3Va0Je1/6",
+    "sendSpam": false,
+    "isAdmin": false,
+    "image": "kramer.jpg"
   }
 ]

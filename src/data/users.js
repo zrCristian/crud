@@ -33,6 +33,8 @@ function saveUser(user) {
     password: hashedPassword,
     sendSpam,
     isAdmin: false,
+    image: 'placeholder.png',
+    gender: ' - ',
   });
 
   writeJsonWithNewData('users.json', JSON.stringify(users));
