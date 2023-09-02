@@ -3,18 +3,16 @@ const { buildValidator } = require('../utils/validations/validateUser');
 function validateNewUser(req, res, next) {
   const user = req.body;
   const validator = buildValidator(user);
+  const isNewUserValid = validator.isValid(user);
 
-  try {
-    validator.validate();
-  } catch (e) {
-    res.render('register', {
-      errors: validator.getErrors(user),
-    });
-
+  if (isNewUserValid) {
+    next();
     return;
   }
 
-  next();
+  res.render('register', {
+    errors: validator.getErrors(user),
+  });
 }
 
 module.exports = validateNewUser;

@@ -1,4 +1,5 @@
 const path = require('path');
+const bcrypt = require('bcryptjs');
 const {
   writeJsonWithNewData,
   getDataByJsonName,
@@ -17,6 +18,8 @@ function saveUser(user) {
   } = user;
   const sendSpam = user.sendSpam === 'on';
 
+  const hashedPassword = bcrypt.hashSync(password, 10);
+
   const users = getAllUsers();
 
   users.push({
@@ -24,7 +27,7 @@ function saveUser(user) {
     name,
     email,
     lastname,
-    password,
+    password: hashedPassword,
     sendSpam,
   });
 
