@@ -16,7 +16,7 @@ function login(req, res) {
   const user = getUserByEmail(loginData.email);
 
   if (user && bcrypt.compareSync(loginData.password, user.password)) {
-    req.session.userMail = user.email;
+    req.session.userId = user.id;
     res.redirect('/');
   } else {
     res.render('login', {

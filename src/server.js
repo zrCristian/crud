@@ -4,6 +4,7 @@ const router = require('./routes');
 const coursesRouter = require('./routes/courses');
 const usersRouter = require('./routes/users');
 const { styles } = require('./views/css/constants');
+const setSessionData = require('./middlewares/userSession');
 require('dotenv').config();
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(session({
 }));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+app.use(setSessionData);
 
 app.use('/cursos', coursesRouter);
 app.use('/usuarios', usersRouter);
