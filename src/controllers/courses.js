@@ -3,6 +3,7 @@ const {
   getPaginatedCourses,
   getAllCourses,
   saveCourse,
+  updateCourse,
 } = require('../data/courses');
 const { defaultValues } = require('../utils/constants');
 
@@ -38,9 +39,25 @@ function create(req, res) {
   res.redirect('/cursos');
 }
 
+function editView(req, res) {
+  const id = +req.params.id;
+  const course = getCourseById(id);
+
+  res.render('courses/edit', { course });
+}
+
+function edit(req, res) {
+  const id = +req.params.id;
+  updateCourse(id, req.body, req.file?.filename);
+
+  res.redirect('/cursos');
+}
+
 module.exports = {
   listAll,
   createView,
   getById,
   create,
+  editView,
+  edit,
 };
