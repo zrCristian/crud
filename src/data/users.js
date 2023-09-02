@@ -29,6 +29,7 @@ function saveUser(user) {
     lastname,
     password: hashedPassword,
     sendSpam,
+    isAdmin: false,
   });
 
   writeJsonWithNewData('users.json', JSON.stringify(users));

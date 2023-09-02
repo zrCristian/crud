@@ -5,6 +5,7 @@
     "email": "german@test.com",
     "lastname": "eichemberger",
     "password": "$2a$10$eGkFOHoEbbs4y/WbtrCC2uYmmGMxg8AyxSjfnvzbYZKQc4OdBWIG.",
-    "sendSpam": false
+    "sendSpam": false,
+    "isAdmin": true
   }
 ]
