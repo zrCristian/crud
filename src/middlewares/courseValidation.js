@@ -3,8 +3,9 @@ const buildCourseValidator = require('../utils/validations/validateCourse');
 function validateCourse(req, res, next) {
   const route = req.path;
   const courseValidator = buildCourseValidator();
+  const isCreation = route.includes('crear');
 
-  const view = route.includes('crear') ? 'courses/create' : 'courses/edit';
+  const view = isCreation ? 'courses/create' : 'courses/edit';
 
   let price = null;
   let duration = null;
@@ -31,10 +32,17 @@ function validateCourse(req, res, next) {
     return;
   }
 
-  res.render(view, {
+  const dataToRender = {
     errors: courseValidator.getErrors(course),
-    courseWithErrors: course,
-  });
+  };
+
+  if (isCreation) {
+    dataToRender.courseWithErrors = course;
+  } else {
+    dataToRender.course = course;
+  }
+
+  res.render(view, dataToRender);
 }
 
 module.exports = validateCourse;

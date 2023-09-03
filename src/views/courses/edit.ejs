@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../components/head', {pageName: 'Crear un curso'}) %>
+<%- include('../components/head', {pageName: 'Editar curso'}) %>
 
 <%- include('../custom/body') %>
 
@@ -11,7 +11,10 @@
 
     <div class="shadow-xl p-10 rounded max-w-6xl mx-auto mt-10 bg-white">
       <h2 class="text-2xl mb-5">Editar '<span class="font-bold"><%= course.name %></span>'</h2>
-      <%- include('../components/courseForm', {action: `/cursos/editar/${course.id}`, course, create: false}) %>
+      <%- include('../components/courseForm', {
+        action: `/cursos/editar/${course.id}`, 
+        course, 
+        create: false}) %>
     </div>
 
   </main>
