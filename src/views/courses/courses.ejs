@@ -5,6 +5,10 @@
 
 <%- include('../custom/body') %>
 
+  <% if (locals.courseCreated) { %>
+    <%- include('../components/announcement', {message: 'Curso creado con exito', success: true}) %>
+  <% } %>
+
   <%- include('../components/navbar') %>
 
   <div class="flex justify-center items-center flex-col h-96 mb-10">

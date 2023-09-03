@@ -13,6 +13,13 @@ function listAll(req, res) {
   const totalNumberOfCourses = getAllCourses().length;
   const numberOfPages = Math.ceil(totalNumberOfCourses / defaultValues.coursesPerPage);
 
+  const hasCreatedNewCourse = req.session?.courseCreated || false;
+
+  if (hasCreatedNewCourse) {
+    res.locals.courseCreated = true;
+    req.session.courseCreated = null;
+  }
+
   res.render('courses/courses', {
     courses,
     metadata: {
@@ -35,6 +42,7 @@ function createView(req, res) {
 
 function create(req, res) {
   saveCourse(req.body, req.file.filename);
+  req.session.courseCreated = true;
 
   res.redirect('/cursos');
 }
