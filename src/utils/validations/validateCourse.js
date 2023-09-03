@@ -7,12 +7,12 @@ const nameValidator = new Validator()
   .notEmpty(errors.minLengthName);
 
 const priceValidator = new NumberValidator()
-  .isNonNegative(errors.negativePrice)
+  .isNonNegative(errors.negativeNumber)
   .notNull(errors.notBlank);
 
 const durationValidator = new NumberValidator()
   .notNull(errors.notBlank)
-  .isNonNegative(errors.negativePrice);
+  .isNonNegative(errors.negativeNumber);
 
 function buildCourseValidator() {
   return new SchemaValidator({

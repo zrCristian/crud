@@ -4,6 +4,7 @@ const errors = {
   notNull: 'el campo no puede ser nulo',
   notBlank: 'el campo no puede estar vacío',
   isEmail: 'el mail no es valido',
+  negativeNumber: 'el número no puede ser negativo',
   login: 'El email o la contraseña no son correctas',
   invalidType: 'El tipo de dato no es valido',
   courses: {
