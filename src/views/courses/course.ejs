@@ -19,7 +19,15 @@
 
         <p class="mb-4"><%= course.description %></p>
 
-        <%- include('../components/button', {text: 'Agregar al carrito', redirect: '/cart'}) %>
+        <% if (locals.isAdmin) { %>
+          <a href="/cursos/editar/<%= course.id %>" 
+            class="text-white <%= styles.colors.secondary %> focus:ring-4font-medium rounded text-sm px-5 py-2.5 text-center">
+            Editar
+          </a>
+        <% } else { %>
+          <%- include('../components/button', {text: 'Agregar al carrito', redirect: '/cart'}) %>
+        <% } %>
+
       </div>
     </div>
   </main>

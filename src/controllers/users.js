@@ -30,6 +30,13 @@ function login(req, res) {
   }
 }
 
+function logout(req, res) {
+  req.session.userId = undefined;
+  req.session.isAdmin = undefined;
+
+  res.redirect('/');
+}
+
 function profile(req, res, next) {
   const id = +req.params.id;
   try {
@@ -49,4 +56,5 @@ module.exports = {
   register,
   login,
   profile,
+  logout,
 };

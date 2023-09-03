@@ -16,6 +16,17 @@
   </div>
 
   <main class="container mx-auto">
+
+    <div class="flex justify-end pb-5 sm:pr-36 container">
+      <% if (locals.isAdmin) { %>
+        <div>
+          <a href="/cursos/crear" class="text-white <%= styles.colors.primary %> focus:ring-4font-medium rounded text-lg px-5 py-2.5 text-center">
+            Crear nuevo curso
+          </a>
+        </div>
+      <% } %>
+    </div>
+
     <div class="flex flex-wrap gap-4 items-center justify-center">
       <% for( let i = 0; i < courses.length; i++ ) { %>
         <%- include('../components/productCard', {product: courses[i]}) %>

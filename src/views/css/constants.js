@@ -1,7 +1,8 @@
-const BUTTON_CLASSES = 'bg-blue-600 hover:bg-blue-500';
-
 const styles = {
-  buttonColor: BUTTON_CLASSES,
+  colors: {
+    primary: 'text-white bg-blue-600 hover:bg-blue-500',
+    secondary: 'text-white bg-amber-500 hover:bg-amber-600',
+  },
 };
 
 module.exports = {

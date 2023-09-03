@@ -29,12 +29,13 @@
   },
   {
     "id": 4,
-    "name": "AWS Database Specialty",
     "price": 399,
     "stars": 5,
     "image": "dbs.png",
     "categories": ["aws", "cloud", "certificate", "aws specialty"],
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque.",
+    "duration": 42,
+    "name": "AWS Database Specialty"
   },
   {
     "id": 5,
@@ -52,7 +53,8 @@
     "stars": 5,
     "image": "dep.png",
     "categories": ["aws", "cloud", "certificate", "aws professional"],
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque.",
+    "duration": 56
   },
   {
     "id": 7,
@@ -61,7 +63,8 @@
     "stars": 5,
     "image": null,
     "categories": ["aws", "cloud", "certificate", "aws associate"],
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque.",
+    "duration": 41
   },
   {
     "id": 8,
@@ -70,7 +73,8 @@
     "stars": 4.5,
     "image": null,
     "categories": ["google cloud", "cloud", "certificate"],
-    "description": "This course helps you design, develop and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives."
+    "description": "This course helps you design, develop and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives.",
+    "duration": 123
   },
   {
     "id": 9,
@@ -79,7 +83,8 @@
     "stars": 4.5,
     "image": null,
     "categories": ["azure", "cloud", "certificate"],
-    "description": "Learn how to manage and maintain the infrastructure for the core web apps and services that developers build and deploy."
+    "description": "Learn how to manage and maintain the infrastructure for the core web apps and services that developers build and deploy.",
+    "duration": 23
   },
   {
     "id": 10,
@@ -97,7 +102,8 @@
     "stars": 4,
     "image": null,
     "categories": ["google cloud", "cloud", "networking", "certificate"],
-    "description": "Dive deep into the nuances of networking in the Google Cloud platform and enhance your knowledge of global, regional and zonal resources."
+    "description": "Dive deep into the nuances of networking in the Google Cloud platform and enhance your knowledge of global, regional and zonal resources.",
+    "duration": 49
   },
   {
     "id": 12,
