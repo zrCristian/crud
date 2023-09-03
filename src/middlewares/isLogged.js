@@ -1,5 +1,5 @@
 function isLogged(req, res, next) {
-  if (req.session.userMail) {
+  if (req.session.userId) {
     res.redirect('/');
   } else {
     next();
@@ -7,7 +7,7 @@ function isLogged(req, res, next) {
 }
 
 function isNotLogged(req, res, next) {
-  if (!req.session.userMail) {
+  if (!req.session.userId) {
     res.redirect('/login');
   } else {
     next();
