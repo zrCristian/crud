@@ -12,7 +12,17 @@
     <div class="shadow-xl p-10 rounded max-w-6xl mx-auto mt-10 bg-white">
       <h2 class="text-2xl mb-5">Crear un curso:</h2>
 
-      <%- include('../components/courseForm', {action: '/cursos/crear', course: {name: '', price: '', duration: '', description: ''}, create: true}) %>
+      <%- include('../components/courseForm', {
+        action: '/cursos/crear', 
+        course: typeof courseWithErrors !== 'undefined' ? courseWithErrors : {
+            name: '',
+            price: '', 
+            duration: '', 
+            description: ''
+          }, 
+          create: true,
+          errors: typeof errors !== 'undefined' ? errors : {} 
+        }) %>
 
     </div>
 

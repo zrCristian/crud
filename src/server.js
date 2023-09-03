@@ -37,6 +37,8 @@ app.use((err, req, res, next) => {
     return res.status(404).render('404');
   }
 
+  console.error(err);
+
   if (err) {
     return res.status(err.status || 500).json(err.message);
   }

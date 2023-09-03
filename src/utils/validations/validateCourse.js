@@ -1,26 +1,25 @@
 const { Validator, NumberValidator, SchemaValidator } = require('another-validator');
 const { errors } = require('../constants');
 
-function validateCourse(course) {
-  const nameValidator = new Validator()
-    .minLength(3, errors.minLengthName)
-    .maxLength(100, errors.maxLengthName)
-    .notEmpty(errors.minLengthName);
+const nameValidator = new Validator()
+  .minLength(3, errors.minLengthName)
+  .maxLength(100, errors.maxLengthName)
+  .notEmpty(errors.minLengthName);
 
-  const priceValidator = new NumberValidator()
-    .isNonNegative(errors.negativePrice)
-    .notNull();
+const priceValidator = new NumberValidator()
+  .isNonNegative(errors.negativePrice)
+  .notNull(errors.notBlank);
 
-  const durationValidator = new NumberValidator()
-    .isNonNegative(errors.negativePrice);
+const durationValidator = new NumberValidator()
+  .notNull(errors.notBlank)
+  .isNonNegative(errors.negativePrice);
 
-  const courseValidator = new SchemaValidator({
+function buildCourseValidator() {
+  return new SchemaValidator({
     name: nameValidator,
     price: priceValidator,
     duration: durationValidator,
   });
-
-  courseValidator.validate(course);
 }
 
-module.exports = validateCourse;
+module.exports = buildCourseValidator;

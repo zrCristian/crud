@@ -5,6 +5,7 @@ const errors = {
   notBlank: 'el campo no puede estar vacío',
   isEmail: 'el mail no es valido',
   login: 'El email o la contraseña no son correctas',
+  invalidType: 'El tipo de dato no es valido',
   courses: {
     minLengthName: 'El curso debe tener al menos 3 caracteres',
     maxLengthName: 'El curso solo puede tener hasta 100 caracteres',

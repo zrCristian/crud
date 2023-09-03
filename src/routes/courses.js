@@ -9,6 +9,7 @@ const {
   edit,
 } = require('../controllers/courses');
 const isAdmin = require('../middlewares/isAdmin');
+const validateCourse = require('../middlewares/courseValidation');
 
 const router = Router();
 
@@ -25,11 +26,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get('/', listAll);
-router.get('/crear', isAdmin, createView);
+router.get('/crear', createView);
 router.get('/editar/:id', isAdmin, editView);
 router.get('/:id', getById);
 
-router.post('/crear', upload.single('image'), isAdmin, create);
+router.post('/crear', upload.single('image'), validateCourse, create);
 router.post('/editar/:id', upload.single('image'), isAdmin, edit);
 
 module.exports = router;
