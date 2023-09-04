@@ -4,7 +4,6 @@ const { errors } = require('../utils/constants');
 const UnauthorizedException = require('../errors/notAllowed');
 
 function register(req, res) {
-  console.log(req.errors);
   const user = req.body;
   saveUser(user);
 
