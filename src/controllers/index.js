@@ -3,6 +3,13 @@ function index(req, res) {
 }
 
 function loginView(req, res) {
+  const hasCreatedNewAccount = req.session?.accountCreated || false;
+
+  if (hasCreatedNewAccount) {
+    res.locals.accountCreated = true;
+    req.session.accountCreated = null;
+  }
+
   res.render('login');
 }
 

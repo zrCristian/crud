@@ -6,6 +6,7 @@ const UnauthorizedException = require('../errors/notAllowed');
 function register(req, res) {
   const user = req.body;
   saveUser(user);
+  req.session.accountCreated = true;
 
   res.redirect('/login');
 }

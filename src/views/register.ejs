@@ -5,6 +5,10 @@
 
 <%- include('./custom/body') %>
 
+<% if (typeof errors !== 'undefined') { %>
+  <%- include('./components/announcement', {message: 'Hubo un error al crear su cuenta', success: false}) %>
+<% } %>
+
 <main>
   <section class="bg-white">
     <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
