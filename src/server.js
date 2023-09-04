@@ -16,6 +16,12 @@ app.locals = { styles };
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
+app.use((req, res, next) => {
+  logger.debug(req.path);
+
+  next();
+});
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: true,
