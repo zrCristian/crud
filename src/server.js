@@ -5,6 +5,7 @@ const coursesRouter = require('./routes/courses');
 const usersRouter = require('./routes/users');
 const { styles } = require('./views/css/constants');
 const setSessionData = require('./middlewares/userSession');
+const logger = require('./utils/logs/logger');
 require('dotenv').config();
 
 const app = express();
@@ -37,7 +38,7 @@ app.use((err, req, res, next) => {
     return res.status(404).render('404');
   }
 
-  console.error(err);
+  logger.error(err);
 
   if (err) {
     return res.status(err.status || 500).json(err.message);
@@ -47,5 +48,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`[server]: running on port: ${PORT}`);
+  logger.info(`running on port: ${PORT}`);
 });
