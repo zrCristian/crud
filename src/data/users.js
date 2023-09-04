@@ -4,7 +4,7 @@ const {
   writeJsonWithNewData,
   getDataByJsonName,
 } = require('../utils/json');
-const NotFoundException = require('../errors/error');
+const NotFoundException = require('../errors/notFoundException');
 
 const USER_DATA_PATH = path.resolve(__dirname, './json/users.json');
 

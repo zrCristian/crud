@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 const { saveUser, getUserByEmail, getUserById } = require('../data/users');
 const { errors } = require('../utils/constants');
-const UnauthorizedException = require('../errors/notAllowed');
+const UnauthorizedException = require('../errors/notAllowedException');
 
 function register(req, res) {
   const user = req.body;
