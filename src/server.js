@@ -41,7 +41,7 @@ app.use((err, req, res, next) => {
   logger.error(err);
 
   if (err) {
-    return res.status(err.status || 500).json(err.message);
+    return res.status(err.status || 500).render('5xx');
   }
 
   return next();
