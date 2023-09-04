@@ -52,9 +52,19 @@ function profile(req, res, next) {
   }
 }
 
+function updateView(req, res) {
+  res.render('users/edit');
+}
+
+function update(req, res) {
+  res.redirect('/usuarios/1');
+}
+
 module.exports = {
   register,
   login,
   profile,
   logout,
+  updateView,
+  update,
 };
