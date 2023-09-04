@@ -2,10 +2,10 @@
   "name": "german-cloud",
   "version": "1.0.0",
   "description": "Una tienda de cursos",
-  "main": "src/server.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon --config ./nodemon.json src/server.js",
+    "dev": "nodemon --config ./nodemon.json src/app.js",
     "build:css": "npx tailwindcss -i ./src/views/css/styles.css -o ./public/css/styles.css",
     "dev:tailwindcss": "npx tailwindcss -i ./src/views/css/styles.css -o ./public/css/styles.css --watch",
     "watch": "npm run dev & npm run dev:tailwindcss",
