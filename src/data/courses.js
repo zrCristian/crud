@@ -14,12 +14,19 @@ function getAllCourses() {
   return courses;
 }
 
-function getPaginatedCourses(pageNumber = 0, coursesPerPage = defaultValues.coursesPerPage) {
-  const courses = getAllCourses();
+function getPaginatedCourses(
+  pageNumber = 0,
+  coursesPerPage = defaultValues.coursesPerPage,
+  courses = getAllCourses(),
+) {
   const firstIndex = pageNumber * coursesPerPage;
   const lastIndex = Math.min((pageNumber + 1) * coursesPerPage, courses.length);
 
   return courses.slice(firstIndex, lastIndex);
+}
+
+function searchCoursesByName(name) {
+  return getAllCourses().filter((course) => course.name.toLowerCase().includes(name.toLowerCase()));
 }
 
 function getCourseById(id) {
@@ -96,4 +103,5 @@ module.exports = {
   updateCourse,
   deleteCourse,
   getPaginatedCourses,
+  searchCoursesByName,
 };

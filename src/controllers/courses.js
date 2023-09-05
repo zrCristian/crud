@@ -5,10 +5,34 @@ const {
   saveCourse,
   updateCourse,
   deleteCourse,
+  searchCoursesByName,
 } = require('../data/courses');
 const { defaultValues } = require('../utils/constants');
 
+function searchCourses(req, res) {
+  const page = req.query.page ? (+(req.query.page) - 1) : 0;
+  const { search } = req.query;
+
+  const courses = searchCoursesByName(search);
+  const totalNumberOfCourses = courses.length;
+  const numberOfPages = Math.ceil(totalNumberOfCourses / defaultValues.coursesPerPage);
+
+  res.render('courses/courses', {
+    courses,
+    metadata: {
+      numberOfPages,
+      page: page + 1,
+    },
+  });
+}
+
 function listAll(req, res) {
+  const { search } = req.query;
+
+  if (search) {
+    return searchCourses(req, res);
+  }
+
   const page = req.query.page ? (+(req.query.page) - 1) : 0;
   const courses = getPaginatedCourses(page);
   const totalNumberOfCourses = getAllCourses().length;
@@ -21,7 +45,7 @@ function listAll(req, res) {
     req.session.courseCreated = null;
   }
 
-  res.render('courses/courses', {
+  return res.render('courses/courses', {
     courses,
     metadata: {
       numberOfPages,
@@ -76,4 +100,5 @@ module.exports = {
   editView,
   edit,
   deleteById,
+  searchCourses,
 };
