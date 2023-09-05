@@ -1,9 +1,10 @@
 const path = require('path');
+const fs = require('fs');
 const {
   getDataByJsonName,
   writeJsonWithNewData,
 } = require('../utils/json');
-const { defaultValues } = require('../utils/constants');
+const { defaultValues, COURSES_PHOTOS_PATH } = require('../utils/constants');
 
 const COURSES_PATH = path.resolve(__dirname, './json/courses.json');
 
@@ -51,6 +52,18 @@ function saveCourse(course, imageFileName) {
   writeJsonWithNewData('courses.json', JSON.stringify(courses));
 }
 
+function deleteCourse(courseId) {
+  const course = getCourseById(courseId);
+
+  if (course.image) {
+    fs.unlinkSync(`${COURSES_PHOTOS_PATH}/${course.image}`);
+  }
+
+  const courses = getAllCourses().filter((c) => c.id !== courseId);
+
+  writeJsonWithNewData('courses.json', JSON.stringify(courses));
+}
+
 function updateCourse(courseId, course, imageFileName) {
   const oldCourse = getCourseById(courseId);
 
@@ -81,5 +94,6 @@ module.exports = {
   getCourseById,
   saveCourse,
   updateCourse,
+  deleteCourse,
   getPaginatedCourses,
 };

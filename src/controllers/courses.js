@@ -4,6 +4,7 @@ const {
   getAllCourses,
   saveCourse,
   updateCourse,
+  deleteCourse,
 } = require('../data/courses');
 const { defaultValues } = require('../utils/constants');
 
@@ -61,6 +62,12 @@ function edit(req, res) {
   res.redirect('/cursos');
 }
 
+function deleteById(req, res) {
+  deleteCourse(+req.params.id);
+
+  res.redirect('/cursos');
+}
+
 module.exports = {
   listAll,
   createView,
@@ -68,4 +75,5 @@ module.exports = {
   create,
   editView,
   edit,
+  deleteById,
 };

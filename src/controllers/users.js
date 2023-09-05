@@ -1,5 +1,7 @@
 const bcrypt = require('bcryptjs');
-const { saveUser, getUserByEmail, getUserById } = require('../data/users');
+const {
+  saveUser, getUserByEmail, getUserById, deleteUser,
+} = require('../data/users');
 const { errors } = require('../utils/constants');
 const UnauthorizedException = require('../errors/notAllowedException');
 
@@ -52,6 +54,15 @@ function profile(req, res, next) {
   }
 }
 
+function deleteUserById(req, res) {
+  req.session.userId = null;
+  req.session.isAdmin = null;
+
+  deleteUser(+req.params.id);
+
+  res.redirect('/');
+}
+
 function updateView(req, res) {
   res.render('users/edit');
 }
@@ -66,5 +77,6 @@ module.exports = {
   profile,
   logout,
   updateView,
+  deleteUserById,
   update,
 };
