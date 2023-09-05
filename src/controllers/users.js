@@ -55,10 +55,16 @@ function profile(req, res, next) {
 }
 
 function deleteUserById(req, res) {
+  const userId = +req.params.id;
+
+  if (userId !== req.session.userId && !req.session.isAdmin) {
+    throw new UnauthorizedException();
+  }
+
   req.session.userId = null;
   req.session.isAdmin = null;
 
-  deleteUser(+req.params.id);
+  deleteUser(userId);
 
   res.redirect('/');
 }
