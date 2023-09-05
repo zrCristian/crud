@@ -19,5 +19,17 @@
     <% }) %>
   <% } %>
 
+  <% if (typeof scripts !== 'undefined' && scripts.length >= 0) { %>
+    <% scripts.forEach(script => { %>
+      <script defer src="<%= script %>"></script>
+    <% }) %>
+  <% } %>
+
+  <% if (typeof modules !== 'undefined' && modules.length >= 0) { %>
+    <% modules.forEach(script => { %>
+      <script defer src="<%= script %>" type="module"></script>
+    <% }) %>
+  <% } %>
+
 
 </head>
