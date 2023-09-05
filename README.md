@@ -9,6 +9,8 @@ Hecho para alumnos de Digital House del curso Fullstack (o cualquier persona con
 
 ## Como levantar el proyecto en local 
 
+Crear un archivo .env en la raíz del proyecto. Usar example.env como referencia.
+
 ### Instalar dependencias 
 
 ```bash
