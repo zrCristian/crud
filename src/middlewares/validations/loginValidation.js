@@ -1,4 +1,4 @@
-const loginValidator = require('../utils/validations/loginValidation');
+const loginValidator = require('../../utils/validations/loginValidation');
 
 function validateLogin(req, res, next) {
   const loginData = req.body;

@@ -6,9 +6,9 @@ const {
   cart,
 } = require('../controllers');
 const { register, login } = require('../controllers/users');
-const validateNewUser = require('../middlewares/userValidation');
-const validateLogin = require('../middlewares/loginValidation');
-const { isLogged } = require('../middlewares/isLogged');
+const validateNewUser = require('../middlewares/validations/userValidation');
+const validateLogin = require('../middlewares/validations/loginValidation');
+const { isLogged } = require('../middlewares/security/isLogged');
 
 const router = Router();
 

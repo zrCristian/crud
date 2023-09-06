@@ -9,7 +9,7 @@ const {
   edit,
   deleteById,
 } = require('../controllers/courses');
-const isAdmin = require('../middlewares/isAdmin');
+const isAdmin = require('../middlewares/security/isAdmin');
 const validateCourse = require('../middlewares/courseValidation');
 
 const router = Router();

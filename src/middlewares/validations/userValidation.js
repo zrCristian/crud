@@ -1,4 +1,4 @@
-const { buildValidator } = require('../utils/validations/validateUser');
+const { buildValidator } = require('../../utils/validations/validateUser');
 
 function validateNewUser(req, res, next) {
   const user = req.body;
