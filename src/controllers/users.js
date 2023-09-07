@@ -1,10 +1,13 @@
 const bcrypt = require('bcryptjs');
 const {
-  saveUser, getUserByEmail, getUserById, deleteUser,
+  saveUser,
+  getUserByEmail,
+  getUserById,
+  deleteUser,
 } = require('../data/users');
 const { errors } = require('../utils/constants');
-const UnauthorizedException = require('../errors/notAllowedException');
 const setSessionWithUserData = require('../utils/security/setSession');
+const isUserAllowed = require('../utils/security/validateUserPermission');
 
 const keepUserLoggedCookie = 'user';
 
@@ -48,13 +51,11 @@ function logout(req, res) {
 }
 
 function profile(req, res, next) {
-  const id = +req.params.id;
+  const userId = +req.params.id;
   try {
-    if (id !== req.session.userId && !req.session.isAdmin) {
-      throw new UnauthorizedException();
-    }
+    isUserAllowed(req.session, userId);
 
-    const user = getUserById(id);
+    const user = getUserById(userId);
 
     res.render('users/profile', { user });
   } catch (e) {
@@ -65,14 +66,13 @@ function profile(req, res, next) {
 function deleteUserById(req, res) {
   const userId = +req.params.id;
 
-  if (userId !== req.session.userId && !req.session.isAdmin) {
-    throw new UnauthorizedException();
-  }
-
-  req.session.userId = null;
-  req.session.isAdmin = null;
-
+  isUserAllowed(req.session, userId);
   deleteUser(userId);
+
+  if (req.session.userId === userId) {
+    req.session.destroy();
+    res.clearCookie(keepUserLoggedCookie);
+  }
 
   res.redirect('/');
 }
