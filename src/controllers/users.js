@@ -19,6 +19,10 @@ function login(req, res) {
   const user = getUserByEmail(loginData.email);
 
   if (user && bcrypt.compareSync(loginData.password, user.password)) {
+    if (loginData.keepLogged) {
+      res.cookie('user', user.id, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true });
+    }
+
     req.session.userId = user.id;
     req.session.isAdmin = user.isAdmin;
 
@@ -33,8 +37,7 @@ function login(req, res) {
 }
 
 function logout(req, res) {
-  req.session.userId = undefined;
-  req.session.isAdmin = undefined;
+  req.session.destroy();
 
   res.redirect('/');
 }
