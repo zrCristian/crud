@@ -1,10 +1,11 @@
 const { getUserById } = require('../../data/users');
+const setSessionWithUserData = require('../../utils/security/setSession');
 
 function cookieCheck(req, res, next) {
-  if (req.cookies.user !== undefined) {
+  if (req.session.userId === undefined
+    && req.cookies.user !== undefined) {
     const user = getUserById(+req.cookies.user);
-    req.session.userId = user.id;
-    req.session.isAdmin = user.isAdmin;
+    setSessionWithUserData(req, user);
   }
 
   next();

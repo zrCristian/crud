@@ -4,6 +4,9 @@ const {
 } = require('../data/users');
 const { errors } = require('../utils/constants');
 const UnauthorizedException = require('../errors/notAllowedException');
+const setSessionWithUserData = require('../utils/security/setSession');
+
+const keepUserLoggedCookie = 'user';
 
 function register(req, res) {
   const user = req.body;
@@ -20,11 +23,12 @@ function login(req, res) {
 
   if (user && bcrypt.compareSync(loginData.password, user.password)) {
     if (loginData.keepLogged) {
-      res.cookie('user', user.id, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true });
+      res.cookie(keepUserLoggedCookie, user.id, {
+        maxAge: 1000 * 60 * 60 * 24,
+      });
     }
 
-    req.session.userId = user.id;
-    req.session.isAdmin = user.isAdmin;
+    setSessionWithUserData(req, user);
 
     res.redirect('/');
   } else {
@@ -38,6 +42,7 @@ function login(req, res) {
 
 function logout(req, res) {
   req.session.destroy();
+  res.clearCookie(keepUserLoggedCookie);
 
   res.redirect('/');
 }
