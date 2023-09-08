@@ -1,4 +1,8 @@
-<%- include('../components/head', {pageName: course.name,  scripts: ['/js/delete.js']}) %>
+<%- include('../components/head', {
+  pageName: course.name, 
+  scripts: locals?.isAdmin ? ['delete.js'] : [],
+  modules: !locals?.isAdmin ? ['course.js'] : []
+  }) %>
 <%- include('../custom/body') %>
   <%- include('../components/navbar') %>
 
@@ -30,7 +34,13 @@
             </a>
           </div>
         <% } else { %>
-          <%- include('../components/button', {text: 'Agregar al carrito', redirect: '/cart'}) %>
+          <a href="javascript:void(0);" 
+            id="addToCart"
+            data-course-id="<%= course.id %>"
+            data-course-price="<%= course.price %>"
+            class="text-white <%= styles.colors.primary %> focus:ring-4font-medium rounded text-sm px-5 py-2.5 text-center">
+            Agregar al carrito
+          </a>
         <% } %>
 
       </div>

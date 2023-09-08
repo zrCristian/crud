@@ -1,3 +1,5 @@
+import updateCartPrice from './state/cart.js';
+
 const closeAnnouncmentButton = document.getElementById('announcementButton');
 const announcement = document.getElementById('announcement');
 
@@ -15,3 +17,5 @@ if (searchIcon) {
     searchForm.submit();
   });
 }
+
+updateCartPrice();

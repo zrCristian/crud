@@ -13,7 +13,7 @@
   <title><%= pageName %></title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script defer src="/js/common.js"></script>
+  <script defer src="/js/common.js" type="module"></script>
 
   <% if (typeof links !== 'undefined' && links.length >= 0) { %>
     <% links.forEach(link => { %>
@@ -23,13 +23,13 @@
 
   <% if (typeof scripts !== 'undefined' && scripts.length >= 0) { %>
     <% scripts.forEach(script => { %>
-      <script defer src="<%= script %>"></script>
+      <script defer src="/js/<%= script %>">0</script>
     <% }) %>
   <% } %>
 
   <% if (typeof modules !== 'undefined' && modules.length >= 0) { %>
     <% modules.forEach(script => { %>
-      <script defer src="<%= script %>" type="module"></script>
+      <script defer src="/js/<%= script %>" type="module"></script>
     <% }) %>
   <% } %>
 
