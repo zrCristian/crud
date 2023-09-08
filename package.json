@@ -10,6 +10,7 @@
     "dev:tailwindcss": "npx tailwindcss -i ./src/views/css/styles.css -o ./public/css/styles.css --watch",
     "watch": "npm run dev & npm run dev:tailwindcss",
     "lint": "eslint . --ext .js",
+    "lint:ejs": "ejslint src/views/login.ejs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -34,6 +35,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
+    "ejs-lint": "^2.0.0",
     "eslint": "^8.48.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.28.1",
