@@ -32,17 +32,19 @@ const cookieKey = {
   user: 'user',
 };
 
-const COURSES_PHOTOS_PATH = path.resolve(__dirname, '../../public/images/courses');
-const USERS_PHOTOS_PATH = path.join(__dirname, '../../public/images/users');
+const folderPath = {
+  COURSES_PHOTOS: path.resolve(__dirname, '../../public/images/courses'),
+  USERS_PHOTOS: path.resolve(__dirname, '../../public/images/users'),
+  USER_DATA_FILE: path.resolve(__dirname, './../data/json/users.json'),
+};
 
 const defaultValues = {
   coursesPerPage: 12,
 };
 
 module.exports = {
-  COURSES_PHOTOS_PATH,
   errors,
   cookieKey,
   defaultValues,
-  USERS_PHOTOS_PATH,
+  folderPath,
 };

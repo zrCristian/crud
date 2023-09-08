@@ -1,4 +1,3 @@
-const path = require('path');
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const {
@@ -6,12 +5,10 @@ const {
   getDataByJsonName,
 } = require('../utils/json');
 const NotFoundException = require('../errors/notFoundException');
-const { USERS_PHOTOS_PATH } = require('../config/constants');
-
-const USER_DATA_PATH = path.resolve(__dirname, './json/users.json');
+const { folderPath } = require('../config/constants');
 
 function getAllUsers() {
-  return getDataByJsonName(USER_DATA_PATH);
+  return getDataByJsonName(folderPath.USER_DATA_FILE);
 }
 
 function saveUser(user) {
@@ -60,7 +57,7 @@ function deleteUser(id) {
   const user = getUserById(id);
 
   if (user.image) {
-    fs.unlinkSync(`${USERS_PHOTOS_PATH}/${user.image}`);
+    fs.unlinkSync(`${folderPath.USERS_PHOTOS}/${user.image}`);
   }
 
   const users = getAllUsers().filter((u) => u.id === id);

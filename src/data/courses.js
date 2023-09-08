@@ -4,7 +4,7 @@ const {
   getDataByJsonName,
   writeJsonWithNewData,
 } = require('../utils/json');
-const { defaultValues, COURSES_PHOTOS_PATH } = require('../config/constants');
+const { defaultValues, folderPath } = require('../config/constants');
 
 const COURSES_PATH = path.resolve(__dirname, './json/courses.json');
 
@@ -63,7 +63,7 @@ function deleteCourse(courseId) {
   const course = getCourseById(courseId);
 
   if (course.image) {
-    fs.unlinkSync(`${COURSES_PHOTOS_PATH}/${course.image}`);
+    fs.unlinkSync(`${folderPath.COURSES_PHOTOS}/${course.image}`);
   }
 
   const courses = getAllCourses().filter((c) => c.id !== courseId);
