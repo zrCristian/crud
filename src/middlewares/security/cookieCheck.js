@@ -3,6 +3,7 @@ const { isJWT } = require('another-validator');
 const { JWT_SECRET } = require('../../config/env');
 const { getUserById } = require('../../data/users');
 const setSessionWithUserData = require('../../utils/security/setSession');
+const { cookieKey } = require('../../config/constants');
 
 function getTokenData(jwtToken, attributeName) {
   const isValidJwt = isJWT(jwtToken);
@@ -25,7 +26,7 @@ function cookieCheck(req, res, next) {
     try {
       const jwtToken = req.cookies.user;
 
-      const userId = getTokenData(jwtToken, 'userId');
+      const userId = getTokenData(jwtToken, cookieKey.user);
       const user = getUserById(userId);
       setSessionWithUserData(req, user);
     } catch (e) {

@@ -6,12 +6,10 @@ const {
   getUserById,
   deleteUser,
 } = require('../data/users');
-const { errors } = require('../config/constants');
+const { errors, cookieKey } = require('../config/constants');
 const setSessionWithUserData = require('../utils/security/setSession');
 const isUserAllowed = require('../utils/security/validateUserPermission');
 const { JWT_SECRET } = require('../config/env');
-
-const keepUserLoggedCookie = 'user';
 
 function register(req, res) {
   const user = req.body;
@@ -30,7 +28,7 @@ function login(req, res) {
     if (loginData.keepLogged) {
       const token = jwt.sign({ userId: user.id }, JWT_SECRET);
 
-      res.cookie(keepUserLoggedCookie, token, {
+      res.cookie(cookieKey.user, token, {
         maxAge: 1000 * 60 * 60 * 24,
       });
     }
@@ -49,7 +47,7 @@ function login(req, res) {
 
 function logout(req, res) {
   req.session.destroy();
-  res.clearCookie(keepUserLoggedCookie);
+  res.clearCookie(cookieKey.user);
 
   res.redirect('/');
 }
@@ -75,7 +73,7 @@ function deleteUserById(req, res) {
 
   if (req.session.userId === userId) {
     req.session.destroy();
-    res.clearCookie(keepUserLoggedCookie);
+    res.clearCookie(cookieKey.user);
   }
 
   res.redirect('/');
