@@ -7,7 +7,7 @@ const {
   deleteCourse,
   searchCoursesByName,
 } = require('../data/courses');
-const { defaultValues } = require('../utils/constants');
+const { defaultValues } = require('../config/constants');
 
 function searchCourses(req, res) {
   const page = req.query.page ? (+(req.query.page) - 1) : 0;

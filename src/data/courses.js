@@ -4,7 +4,7 @@ const {
   getDataByJsonName,
   writeJsonWithNewData,
 } = require('../utils/json');
-const { defaultValues, COURSES_PHOTOS_PATH } = require('../utils/constants');
+const { defaultValues, COURSES_PHOTOS_PATH } = require('../config/constants');
 
 const COURSES_PATH = path.resolve(__dirname, './json/courses.json');
 

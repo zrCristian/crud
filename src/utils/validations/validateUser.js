@@ -3,7 +3,7 @@ const {
   SchemaValidator,
   isEmail,
 } = require('another-validator');
-const { errors } = require('../constants');
+const { errors } = require('../../config/constants');
 const usersData = require('../../data/json/users.json');
 
 const nameValidator = new Validator()

@@ -6,7 +6,7 @@ const {
   getUserById,
   deleteUser,
 } = require('../data/users');
-const { errors } = require('../utils/constants');
+const { errors } = require('../config/constants');
 const setSessionWithUserData = require('../utils/security/setSession');
 const isUserAllowed = require('../utils/security/validateUserPermission');
 const { JWT_SECRET } = require('../config/env');

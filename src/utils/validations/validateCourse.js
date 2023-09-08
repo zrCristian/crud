@@ -1,5 +1,5 @@
 const { Validator, NumberValidator, SchemaValidator } = require('another-validator');
-const { errors } = require('../constants');
+const { errors } = require('../../config/constants');
 
 const nameValidator = new Validator()
   .minLength(3, errors.minLengthName)

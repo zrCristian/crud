@@ -6,7 +6,7 @@ const {
   getDataByJsonName,
 } = require('../utils/json');
 const NotFoundException = require('../errors/notFoundException');
-const { USERS_PHOTOS_PATH } = require('../utils/constants');
+const { USERS_PHOTOS_PATH } = require('../config/constants');
 
 const USER_DATA_PATH = path.resolve(__dirname, './json/users.json');
 

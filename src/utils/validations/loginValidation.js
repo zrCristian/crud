@@ -1,5 +1,5 @@
 const { Validator, SchemaValidator } = require('another-validator');
-const { errors } = require('../constants');
+const { errors } = require('../../config/constants');
 
 const emailValidator = new Validator()
   .isEmail(errors.isEmail)
