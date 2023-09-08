@@ -18,7 +18,7 @@ app.set('views', './src/views');
 
 app.use(logHTTPCalls);
 app.use(session({
-  secret: SESSION_SECRET || 'secret',
+  secret: SESSION_SECRET,
   resave: true,
   saveUninitialized: true,
 }));
