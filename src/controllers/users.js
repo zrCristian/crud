@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const {
   saveUser,
   getUserByEmail,
@@ -8,6 +9,7 @@ const {
 const { errors } = require('../utils/constants');
 const setSessionWithUserData = require('../utils/security/setSession');
 const isUserAllowed = require('../utils/security/validateUserPermission');
+const { JWT_SECRET } = require('../config/env');
 
 const keepUserLoggedCookie = 'user';
 
@@ -26,7 +28,9 @@ function login(req, res) {
 
   if (user && bcrypt.compareSync(loginData.password, user.password)) {
     if (loginData.keepLogged) {
-      res.cookie(keepUserLoggedCookie, user.id, {
+      const token = jwt.sign({ userId: user.id }, JWT_SECRET);
+
+      res.cookie(keepUserLoggedCookie, token, {
         maxAge: 1000 * 60 * 60 * 24,
       });
     }
