@@ -1,4 +1,4 @@
-const buildCourseValidator = require('../utils/validations/validateCourse');
+const buildCourseValidator = require('../../utils/validations/validateCourse');
 
 function validateCourse(req, res, next) {
   const route = req.path;
