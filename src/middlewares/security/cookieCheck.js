@@ -8,14 +8,14 @@ function getTokenData(jwtToken, attributeName) {
   const isValidJwt = isJWT(jwtToken);
 
   if (!isValidJwt) {
-    throw new Error('invalid token', jwtToken);
+    throw new Error(`invalid token ${jwtToken}`);
   }
 
   try {
     const token = jwt.verify(jwtToken, JWT_SECRET);
     return token[attributeName];
   } catch (e) {
-    throw new Error('invalid token', jwtToken);
+    throw new Error(`invalid token ${jwtToken}`);
   }
 }
 
@@ -30,6 +30,7 @@ function cookieCheck(req, res, next) {
       setSessionWithUserData(req, user);
     } catch (e) {
       res.clearCookie('user');
+      res.session.destroy();
       throw e;
     }
   }
