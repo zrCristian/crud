@@ -10,7 +10,7 @@ const {
   deleteById,
 } = require('../controllers/courses');
 const isAdmin = require('../middlewares/security/isAdmin');
-const validateCourse = require('../middlewares/courseValidation');
+const validateCourse = require('../middlewares/validations/courseValidation');
 
 const router = Router();
 
