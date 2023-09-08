@@ -11,6 +11,7 @@
     "watch": "npm run dev & npm run dev:tailwindcss",
     "lint": "eslint . --ext .js",
     "lint:ejs": "ejslint src/views/login.ejs",
+    "lint:client": "eslint ./public/js --ext .js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
