@@ -10,6 +10,8 @@ if (announcement) {
   });
 }
 
-searchIcon.addEventListener('click', () => {
-  searchForm.submit();
-});
+if (searchIcon) {
+  searchIcon.addEventListener('click', () => {
+    searchForm.submit();
+  });
+}
