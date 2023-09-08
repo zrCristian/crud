@@ -7,7 +7,7 @@ const setSessionData = require('./middlewares/userSession');
 const logHTTPCalls = require('./middlewares/loggerHttpCalls');
 const errorHandler = require('./errors/errorHandlerMiddleware');
 const cookieCheck = require('./middlewares/security/cookieCheck');
-require('dotenv').config();
+const { SESSION_SECRET } = require('./config/env');
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.set('views', './src/views');
 
 app.use(logHTTPCalls);
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: SESSION_SECRET || 'secret',
   resave: true,
   saveUninitialized: true,
 }));
