@@ -3,15 +3,11 @@ on:
   push:
     branches:
       - 'main'
-    paths:
-        - 'src/*/**.js'
   pull_request:
     types: 
       - opened
     branches: 
       - 'main'
-    paths:
-      - '**.js'
 jobs:
   pipeline:
     runs-on: ubuntu-latest
