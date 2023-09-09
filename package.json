@@ -9,6 +9,8 @@
     "build:css": "npx tailwindcss -i ./src/views/css/styles.css -o ./public/css/styles.css",
     "dev:tailwindcss": "npx tailwindcss -i ./src/views/css/styles.css -o ./public/css/styles.css --watch",
     "watch": "npm run dev & npm run dev:tailwindcss",
+    "docker:build-db": "./docker/database/build.sh",
+    "docker:start-db": "./docker/database/start.sh",
     "lint:backend": "eslint . --ext .js",
     "lint:ejs": "ejslint src/views/login.ejs",
     "lint:client": "eslint ./public/js --ext .js",
