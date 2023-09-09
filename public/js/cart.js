@@ -1,5 +1,6 @@
 import findCoursesByIds from './service/courses.js';
 import updateCartUI from './state/cart.js';
+import { LOCAL_STORAGE_COURSES_KEY } from './utils/constants.js';
 
 const coursesList = document.getElementById('cursos');
 const buttons = [];
@@ -78,10 +79,12 @@ const populateCourseItem = (course) => {
 };
 
 const updateCoursesInCartUI = async () => {
-  const ids = JSON.parse(localStorage.getItem('courses'));
-  if (ids?.length < 1) {
+  const coursesLS = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COURSES_KEY));
+  if (coursesLS?.length < 1) {
     return;
   }
+
+  const ids = coursesLS.map((c) => c.id);
 
   const courses = await findCoursesByIds(ids);
 
@@ -92,10 +95,9 @@ const updateCoursesInCartUI = async () => {
 
 const handleButtonClick = async (button) => {
   const coursesInLS = JSON.parse(localStorage.getItem('courses')) || [];
-  const currentPriceOfCart = localStorage.getItem('cartPrice');
 
   const courseId = +button.id.split('-')[1];
-  const coursesInCart = coursesInLS.filter((id) => id !== courseId);
+  const coursesInCart = coursesInLS.filter((course) => course.id !== courseId);
 
   localStorage.setItem('courses', JSON.stringify(coursesInCart));
 

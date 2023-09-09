@@ -1,15 +1,20 @@
+import { getLSValueByKeyName, setLSValue } from '../service/localStorage.js';
+import { LOCAL_STORAGE_COURSES_KEY } from '../utils/constants.js';
+
 const updateLocalStorage = (button) => {
   try {
-    const cartPrice = +localStorage.getItem('cartPrice');
     const coursePrice = +button.getAttribute('data-course-price');
-
     const courseId = +button.getAttribute('data-course-id');
-    const cartCourses = JSON.parse(localStorage.getItem('courses')) || [];
 
-    cartCourses.push(courseId);
+    const cartCourses = getLSValueByKeyName(LOCAL_STORAGE_COURSES_KEY) || [];
 
-    localStorage.setItem('cartPrice', coursePrice + cartPrice);
-    localStorage.setItem('courses', JSON.stringify(cartCourses));
+    const courseData = {
+      price: coursePrice,
+      id: courseId,
+    };
+
+    cartCourses.push(courseData);
+    setLSValue(LOCAL_STORAGE_COURSES_KEY, cartCourses);
   } catch (error) {
     localStorage.clear();
   }
