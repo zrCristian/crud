@@ -6,7 +6,9 @@ const updateCartUI = () => {
   const cartAmount = document.getElementById('cartAmount');
 
   if (cartPrice || cartAmount) {
-    const courses = getLSValueByKeyName(LOCAL_STORAGE_COURSES_KEY);
+    const courses = getLSValueByKeyName(LOCAL_STORAGE_COURSES_KEY) || [];
+
+    console.log(courses);
 
     const price = courses?.reduce((current, course) => current + course.price, 0) || 0;
     const cartSize = courses?.length || 0;
