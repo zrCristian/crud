@@ -35,6 +35,10 @@ function getCourseById(id) {
   return courses.find((course) => course.id === id);
 }
 
+function getCoursesByIds(ids) {
+  return ids.map((id) => getAllCourses().find((c) => c.id === id));
+}
+
 function saveCourse(course, imageFileName) {
   const {
     name,
@@ -104,4 +108,5 @@ module.exports = {
   deleteCourse,
   getPaginatedCourses,
   searchCoursesByName,
+  getCoursesByIds,
 };
