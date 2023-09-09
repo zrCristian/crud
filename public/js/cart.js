@@ -3,7 +3,7 @@ import { getLSValueByKeyName, setLSValue } from './service/localStorage.js';
 import updateCartUI from './state/cart.js';
 import { LOCAL_STORAGE_COURSES_KEY } from './utils/constants.js';
 
-const coursesList = document.getElementById('cursos');
+const coursesList = document.getElementById('courses');
 const buttons = [];
 
 const populateCourseItem = (course) => {
