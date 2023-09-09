@@ -3,6 +3,7 @@ export const getLSValueByKeyName = (keyName) => {
     return JSON.parse(localStorage.getItem(keyName));
   } catch (e) {
     localStorage.clear();
+    return null;
   }
 };
 
