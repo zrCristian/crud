@@ -1,5 +1,5 @@
 import { getLSValueByKeyName, setLSValue } from '../service/localStorage.js';
-import { LOCAL_STORAGE_COURSES_KEY } from '../utils/constants.js';
+import { LOCAL_STORAGE_COURSES_KEY } from './constants.js';
 
 const updateLocalStorage = (button) => {
   try {

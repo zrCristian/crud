@@ -1,5 +1,5 @@
 import updateCartPrice from './state/cart.js';
-import updateLocalStorage from './util/updateLocalStorage.js';
+import updateLocalStorage from './utils/updateLocalStorage.js';
 
 const addToCartButtons = document.getElementsByClassName('add-to-cart');
 
