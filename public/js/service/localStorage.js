@@ -1,5 +1,15 @@
-export const getLSValueByKeyName = (keyName) => JSON.parse(localStorage.getItem(keyName));
+export const getLSValueByKeyName = (keyName) => {
+  try {
+    JSON.parse(localStorage.getItem(keyName));
+  } catch (e) {
+    localStorage.clear();
+  }
+};
 
 export const setLSValue = (keyName, data) => {
-  localStorage.setItem(keyName, JSON.stringify(data));
+  try {
+    localStorage.setItem(keyName, JSON.stringify(data));
+  } catch (e) {
+    localStorage.clear();
+  }
 };
