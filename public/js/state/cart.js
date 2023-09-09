@@ -1,4 +1,4 @@
-const updateCartPrice = () => {
+const updateCartUI = () => {
   const cartPrice = document.getElementById('cartPrice');
   const cartAmount = document.getElementById('cartAmount');
 
@@ -8,4 +8,4 @@ const updateCartPrice = () => {
   }
 };
 
-export default updateCartPrice;
+export default updateCartUI;
