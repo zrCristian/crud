@@ -14,20 +14,17 @@ const dataSource = new typeorm.DataSource({
   entities: [User],
 });
 
-function initDB() {
+async function initDB() {
   logger.info(`connecting to database: ${db.DB_HOST}:${db.DB_PORT}`);
   logger.debug(`db user: ${db.DB_USER}`);
   logger.debug(`db user: ${db.DB_USER}`);
 
-  dataSource
-    .initialize()
-    .then(() => {
-      logger.info('connected to database');
-    })
-    .catch((error) => {
-      logger.error('error while connecting to database');
-      logger.error(error);
-    });
+  try {
+    await dataSource.initialize();
+  } catch (error) {
+    logger.error('error while connecting to database');
+    logger.error(error);
+  }
 }
 
 module.exports = initDB;

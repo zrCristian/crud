@@ -4,7 +4,12 @@ const logger = require('./utils/logs/logger');
 
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, async () => {
+async function startServer() {
   await initDB();
-  logger.info(`running on port: ${PORT}`);
-});
+
+  app.listen(PORT, async () => {
+    logger.info(`running on port: ${PORT}`);
+  });
+}
+
+startServer();
