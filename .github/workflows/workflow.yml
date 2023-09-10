@@ -1,13 +1,19 @@
-name: eslint
+name: Lint check
 on: 
   push:
     branches:
       - 'main'
+    paths:
+        - '*.js'
+        - '*.ejs'
   pull_request:
     types: 
       - opened
     branches: 
       - 'main'
+    paths:
+        - '*.js'
+        - '*.ejs'
 jobs:
   pipeline:
     runs-on: ubuntu-latest
