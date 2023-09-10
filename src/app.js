@@ -1,8 +1,9 @@
 const initDB = require('./config/db');
+const { appConfig } = require('./config/env');
 const app = require('./server');
 const logger = require('./utils/logs/logger');
 
-const PORT = process.env.PORT || 8080;
+const { PORT } = appConfig;
 
 async function startServer() {
   await initDB();

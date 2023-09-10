@@ -4,6 +4,10 @@ require('dotenv').config();
 
 const DEFAULT_SECRET = 'secret';
 
+const appConfig = {
+  PORT: process.env.PORT || 8080,
+};
+
 const secrets = {
   JWT_SECRET: process.env.JWT_SECRET || DEFAULT_SECRET,
   SESSION_SECRET: process.env.SESSION_SECRET || DEFAULT_SECRET,
@@ -38,4 +42,5 @@ warnUser(secrets);
 module.exports = {
   db,
   secrets,
+  appConfig,
 };
