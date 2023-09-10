@@ -4,16 +4,16 @@ on:
     branches:
       - 'main'
     paths:
-        - '*.js'
-        - '*.ejs'
+        - '**/*.js'
+        - '**/*.ejs'
   pull_request:
     types: 
       - opened
     branches: 
       - 'main'
     paths:
-        - '*.js'
-        - '*.ejs'
+        - '**/*.js'
+        - '**/*.ejs'
 jobs:
   pipeline:
     runs-on: ubuntu-latest
