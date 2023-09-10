@@ -9,7 +9,7 @@ const {
 const { errors, cookieKey } = require('../config/constants');
 const setSessionWithUserData = require('../utils/security/setSession');
 const isUserAllowed = require('../utils/security/validateUserPermission');
-const { JWT_SECRET } = require('../config/env');
+const { secrets } = require('../config/env');
 
 function register(req, res) {
   const user = req.body;
@@ -26,7 +26,7 @@ function login(req, res) {
 
   if (user && bcrypt.compareSync(loginData.password, user.password)) {
     if (loginData.keepLogged) {
-      const token = jwt.sign({ userId: user.id }, JWT_SECRET);
+      const token = jwt.sign({ userId: user.id }, secrets.JWT_SECRET);
 
       res.cookie(cookieKey.user, token, {
         maxAge: 1000 * 60 * 60 * 24,

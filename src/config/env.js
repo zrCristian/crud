@@ -9,6 +9,22 @@ const secrets = {
   SESSION_SECRET: process.env.SESSION_SECRET || DEFAULT_SECRET,
 };
 
+const {
+  DB_PORT,
+  DB_USER,
+  DB_PASSWORD,
+  DB_DATABASE,
+  DB_HOST,
+} = process.env;
+
+const db = {
+  DB_PORT,
+  DB_USER,
+  DB_PASSWORD,
+  DB_DATABASE,
+  DB_HOST,
+};
+
 function warnUser(secretsObj) {
   Object.entries(secretsObj).forEach(([name, value]) => {
     if (value === DEFAULT_SECRET) {
@@ -19,4 +35,7 @@ function warnUser(secretsObj) {
 
 warnUser(secrets);
 
-module.exports = secrets;
+module.exports = {
+  db,
+  secrets,
+};

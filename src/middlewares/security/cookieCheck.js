@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { isJWT } = require('another-validator');
-const { JWT_SECRET } = require('../../config/env');
+const { secrets } = require('../../config/env');
 const { getUserById } = require('../../data/users');
 const setSessionWithUserData = require('../../utils/security/setSession');
 const { cookieKey } = require('../../config/constants');
@@ -13,7 +13,7 @@ function getTokenData(jwtToken, attributeName) {
   }
 
   try {
-    const token = jwt.verify(jwtToken, JWT_SECRET);
+    const token = jwt.verify(jwtToken, secrets.JWT_SECRET);
     return token[attributeName];
   } catch (e) {
     throw new Error(`invalid token ${jwtToken}`);

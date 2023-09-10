@@ -7,7 +7,7 @@ const setSessionData = require('./middlewares/util/userSession');
 const logHTTPCalls = require('./middlewares/util/loggerHttpCalls');
 const errorHandler = require('./errors/errorHandlerMiddleware');
 const cookieCheck = require('./middlewares/security/cookieCheck');
-const { SESSION_SECRET } = require('./config/env');
+const { secrets } = require('./config/env');
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.set('views', './src/views');
 
 app.use(logHTTPCalls);
 app.use(session({
-  secret: SESSION_SECRET,
+  secret: secrets.SESSION_SECRET,
   resave: true,
   saveUninitialized: true,
 }));
