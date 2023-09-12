@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { isJWT } = require('another-validator');
 const { secrets } = require('../../config/env');
-const { getUserById } = require('../../data/users');
+const userService = require('../../data/users');
 const setSessionWithUserData = require('../../utils/security/setSession');
 const { cookieKey } = require('../../config/constants');
 
@@ -20,14 +20,14 @@ function getTokenData(jwtToken, attributeName) {
   }
 }
 
-function cookieCheck(req, res, next) {
+async function cookieCheck(req, res, next) {
   if (req.session.userId === undefined
     && req.cookies.user !== undefined) {
     try {
       const jwtToken = req.cookies.user;
 
       const userId = getTokenData(jwtToken, cookieKey.user);
-      const user = getUserById(userId);
+      const user = await userService.findById(userId);
       setSessionWithUserData(req, user);
     } catch (e) {
       res.clearCookie('user');
