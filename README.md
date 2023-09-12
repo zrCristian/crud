@@ -31,6 +31,8 @@ npm run docker:build-db
 npm run docker:start-db
 ```
 
+Una vez que ya tenemos la base, generar un archivo .env y setear las variables de entorno con los datos necesarios para conectarse a la base. Usar como referencia el archivo `example.env`
+
 ### Correr en modo desarrollo
 
 ```bash
