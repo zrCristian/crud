@@ -1,18 +1,16 @@
-const { getAllCourses, getCoursesByIds: findCoursesByIds } = require('../../data/courses');
+const courseCategory = require('../../services/CourseService');
+const buildPage = require('../../utils/buildPage');
+const getQueryFromRequest = require('../../utils/getQueryFromReq');
 
-function getAll(req, res) {
-  const courses = getAllCourses();
-  res.json(courses);
-}
+async function getPaginated(req, res) {
+  const query = getQueryFromRequest(req);
 
-function getCoursesByIds(req, res) {
-  const idsArray = req.query.ids.split(',').map(Number);
-  const courses = findCoursesByIds(idsArray);
+  const { data, count } = await courseCategory.getPaginated(query);
+  const response = buildPage(data, count, query.page, query.order);
 
-  res.json(courses);
+  res.json(response);
 }
 
 module.exports = {
-  getAll,
-  getCoursesByIds,
+  getPaginated,
 };
