@@ -40,9 +40,18 @@ async function save(user) {
   });
 }
 
+async function deleteById(id) {
+  userRepository.save({
+    id,
+    isDeleted: true,
+    deletedAt: new Date(),
+  });
+}
+
 module.exports = {
   getAll,
   findByEmail,
   findById,
   save,
+  deleteById,
 };

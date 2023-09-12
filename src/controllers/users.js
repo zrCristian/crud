@@ -59,11 +59,12 @@ async function profile(req, res, next) {
   }
 }
 
-// TODO: implement db
 function deleteUserById(req, res) {
   const userId = +req.params.id;
 
   isUserAllowed(req.session, userId);
+
+  userService.deleteById(userId);
 
   if (req.session.userId === userId) {
     req.session.destroy();
