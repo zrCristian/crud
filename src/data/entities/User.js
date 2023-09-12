@@ -26,29 +26,35 @@ module.exports = new EntitySchema({
       type: 'varchar',
       nullable: false,
     },
-    profile_image: {
+    profileImage: {
       type: 'varchar',
       nullable: true,
+      name: 'profile_image',
     },
-    send_notification: {
+    sendNotification: {
       type: 'boolean',
       default: false,
+      name: 'send_notification',
     },
-    is_deleted: {
+    isDeleted: {
       type: 'boolean',
       default: false,
+      name: 'is_deleted',
     },
-    deleted_at: {
+    deletedAt: {
       type: 'timestamp',
       nullable: true,
+      name: 'deleted_at',
     },
-    created_at: {
+    createdAt: {
       type: 'timestamp',
       default: () => 'CURRENT_TIMESTAMP',
+      name: 'created_at',
     },
-    role_id: {
+    roleId: {
       type: 'int',
       nullable: true,
+      name: 'role_id',
     },
   },
   relations: {
