@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
 const { isJWT } = require('another-validator');
 const { secrets } = require('../../config/env');
-const userService = require('../../data/users');
 const setSessionWithUserData = require('../../utils/security/setSession');
 const { cookieKey } = require('../../config/constants');
+const userService = require('../../services/UserService');
 
 function getTokenData(jwtToken, attributeName) {
   const isValidJwt = isJWT(jwtToken);
