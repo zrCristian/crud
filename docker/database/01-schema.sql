@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS courses (
     duration FLOAT,
     description TEXT,
     image VARCHAR(255),
-    starts FLOAT,
-    discount FLOAT,
+    stars FLOAT,
+    discount FLOAT DEFAULT 0,
     is_deleted boolean DEFAULT FALSE, 
     deleted_at TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS users (
     name VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL, 
     profile_image VARCHAR(255),
     send_notification BOOLEAN DEFAULT FALSE,
     is_deleted BOOLEAN DEFAULT FALSE, 
