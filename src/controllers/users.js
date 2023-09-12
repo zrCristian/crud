@@ -19,7 +19,7 @@ async function login(req, res) {
 
   const user = await userService.findByEmail(loginData.email);
 
-  if (user && bcrypt.compareSync(loginData.password, user.password)) {
+  if (user && !user.isDeleted && bcrypt.compareSync(loginData.password, user.password)) {
     if (loginData.keepLogged) {
       const token = jwt.sign({ userId: user.id }, secrets.JWT_SECRET);
 
@@ -30,6 +30,12 @@ async function login(req, res) {
 
     setSessionWithUserData(req, user);
     res.redirect('/');
+  } else if (user?.isDeleted) {
+    res.render('login', {
+      errors: {
+        login: [errors.userDeleted],
+      },
+    });
   } else {
     res.render('login', {
       errors: {

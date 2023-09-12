@@ -1,6 +1,7 @@
 const path = require('path');
 
 const errors = {
+  userDeleted: 'El usuario fue eliminado, envie un mail a soporte para reactivar su cuenta',
   notNull: 'el campo no puede ser nulo',
   notBlank: 'el campo no puede estar vacío',
   isEmail: 'el mail no es valido',
