@@ -1,11 +1,20 @@
 const morgan = require('morgan');
-const { logger } = require('./logger');
+const logger = require('./logger');
 
 logger.stream = {
-  write: (message) => logger.info(message.substring(0, message.lastIndexOf('\n'))),
+  write: (message) => logger.http(message.substring(0, message.lastIndexOf('\n'))),
 };
 
-module.exports = morgan(
-  ':method :url :status :response-time ms - :res[content-length]',
-  { stream: logger.stream },
+const morganMiddleware = morgan(
+  ':method :url :status :response-time ms',
+  {
+    stream: logger.stream,
+    skip: (req) => req.path.startsWith('/js')
+      || req.path.startsWith('/images')
+      || req.path.startsWith('/css')
+      || req.path.startsWith('/favicon.ico'),
+  },
+
 );
+
+module.exports = morganMiddleware;
