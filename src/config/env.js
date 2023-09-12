@@ -3,9 +3,11 @@ const logger = require('../utils/logs/logger');
 require('dotenv').config();
 
 const DEFAULT_SECRET = 'secret';
+const LOG_BANNER = process.env.LOG_BANNER === 'true';
 
 const appConfig = {
   PORT: process.env.PORT || 8080,
+  LOG_BANNER,
 };
 
 const secrets = {
@@ -19,6 +21,7 @@ const {
   DB_PASSWORD,
   DB_DATABASE,
   DB_HOST,
+  DB_LOG_QUERIES,
 } = process.env;
 
 const db = {
@@ -27,6 +30,7 @@ const db = {
   DB_PASSWORD,
   DB_DATABASE,
   DB_HOST,
+  DB_LOG_QUERIES: (DB_LOG_QUERIES && DB_LOG_QUERIES === 'true') || false,
 };
 
 function warnUser(secretsObj) {

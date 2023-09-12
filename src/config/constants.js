@@ -42,9 +42,19 @@ const defaultValues = {
   coursesPerPage: 12,
 };
 
+const entities = {
+  category: 'Category',
+  user: 'User',
+  course: 'Course',
+  role: 'Role',
+  order: 'Order',
+  orderItem: 'OrderItem',
+};
+
 module.exports = {
   errors,
   cookieKey,
   defaultValues,
   folderPath,
+  entities,
 };

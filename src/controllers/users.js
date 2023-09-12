@@ -1,28 +1,26 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {
-  saveUser,
-  getUserByEmail,
-  getUserById,
   deleteUser,
 } = require('../data/users');
 const { errors, cookieKey } = require('../config/constants');
 const setSessionWithUserData = require('../utils/security/setSession');
 const isUserAllowed = require('../utils/security/validateUserPermission');
 const { secrets } = require('../config/env');
+const userService = require('../services/UserService');
 
 function register(req, res) {
   const user = req.body;
-  saveUser(user);
+  userService.save(user);
   req.session.accountCreated = true;
 
   res.redirect('/login');
 }
 
-function login(req, res) {
+async function login(req, res) {
   const loginData = req.body;
 
-  const user = getUserByEmail(loginData.email);
+  const user = await userService.findByEmail(loginData.email);
 
   if (user && bcrypt.compareSync(loginData.password, user.password)) {
     if (loginData.keepLogged) {
@@ -34,7 +32,6 @@ function login(req, res) {
     }
 
     setSessionWithUserData(req, user);
-
     res.redirect('/');
   } else {
     res.render('login', {
@@ -52,12 +49,12 @@ function logout(req, res) {
   res.redirect('/');
 }
 
-function profile(req, res, next) {
+async function profile(req, res, next) {
   const userId = +req.params.id;
   try {
     isUserAllowed(req.session, userId);
 
-    const user = getUserById(userId);
+    const user = await userService.findById(userId);
 
     res.render('users/profile', { user });
   } catch (e) {

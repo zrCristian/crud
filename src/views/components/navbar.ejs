@@ -12,6 +12,11 @@
     <div class="w-full max-w-xs xl:max-w-lg 2xl:max-w-2xl bg-gray-100 dark:text-gray-500 rounded-md hidden xl:flex items-center">
       <select class="bg-transparent uppercase font-bold text-sm p-4 mr-4" name="category" id="category">
         <option>Todas las categorías</option>
+        <% if (categories.length > 0) { %>
+          <% categories.forEach(category => { %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+          <% }) %>         
+        <% } %>
       </select>
 
       <form action="/cursos" method="get" id="searchForm">
@@ -133,7 +138,7 @@
     <a href="/cart">
       <div class="ml-4 hidden sm:flex flex-col font-bold">
         <span class="text-xs text-gray-400">Tu carrito</span>
-        <span id="cartPrice">$0</span>
+        <span id="cartPrice">$0.00</span>
       </div>
     </a>
 
