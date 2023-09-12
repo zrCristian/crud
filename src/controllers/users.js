@@ -1,8 +1,5 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const {
-  deleteUser,
-} = require('../data/users');
 const { errors, cookieKey } = require('../config/constants');
 const setSessionWithUserData = require('../utils/security/setSession');
 const isUserAllowed = require('../utils/security/validateUserPermission');
@@ -62,11 +59,11 @@ async function profile(req, res, next) {
   }
 }
 
+// TODO: implement db
 function deleteUserById(req, res) {
   const userId = +req.params.id;
 
   isUserAllowed(req.session, userId);
-  deleteUser(userId);
 
   if (req.session.userId === userId) {
     req.session.destroy();
