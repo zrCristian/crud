@@ -58,6 +58,7 @@ async function getById(req, res) {
   const { id } = req.params;
 
   const course = await courseService.getById(+id);
+  console.log(course);
   res.render('courses/course', { course });
 }
 

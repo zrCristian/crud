@@ -8,7 +8,7 @@ async function getAll() {
 }
 
 async function getById(id) {
-  return courseRepository.find({
+  return courseRepository.findOne({
     where: {
       id,
     },
@@ -58,4 +58,5 @@ module.exports = {
   getPaginated,
   getByIds,
   deleteById,
+  getById,
 };
