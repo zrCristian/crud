@@ -55,9 +55,9 @@ function listAll(req, res) {
 }
 
 async function getById(req, res) {
-  const { id } = req.params;
+  const id = +req.params.id;
 
-  const course = await courseService.getById(+id);
+  const course = await courseService.getById(id);
   res.render('courses/course', { course });
 }
 
