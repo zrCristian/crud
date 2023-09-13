@@ -54,10 +54,10 @@ function listAll(req, res) {
   });
 }
 
-function getById(req, res) {
+async function getById(req, res) {
   const { id } = req.params;
 
-  const course = getCourseById(+id);
+  const course = await courseService.getById(+id);
   res.render('courses/course', { course });
 }
 
