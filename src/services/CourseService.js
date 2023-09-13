@@ -1,9 +1,17 @@
-const { Like } = require('typeorm');
+const { Like, In } = require('typeorm');
 
 const { courseRepository } = require('../data/repositories/CourseRepository');
 
 async function getAll() {
   return courseRepository.find();
+}
+
+async function getByIds(ids) {
+  return courseRepository.find({
+    where: {
+      id: In([...ids]),
+    },
+  });
 }
 
 async function getPaginated(query) {
@@ -25,4 +33,5 @@ async function getPaginated(query) {
 module.exports = {
   getAll,
   getPaginated,
+  getByIds,
 };

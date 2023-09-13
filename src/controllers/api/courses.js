@@ -11,6 +11,15 @@ async function getPaginated(req, res) {
   res.json(response);
 }
 
+async function getCoursesByIds(req, res) {
+  const ids = req.query.ids.split(',').map(Number);
+
+  const response = await courseService.getByIds(ids);
+
+  res.json(response);
+}
+
 module.exports = {
   getPaginated,
+  getCoursesByIds,
 };
