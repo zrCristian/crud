@@ -1,5 +1,4 @@
 const {
-  getCourseById,
   getPaginatedCourses,
   getAllCourses,
   saveCourse,
