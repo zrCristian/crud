@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS courses (
     duration FLOAT,
     description TEXT,
     image VARCHAR(255),
-    stars FLOAT,
+    stars FLOAT DEFAULT 0,
     discount FLOAT DEFAULT 0,
     is_deleted boolean DEFAULT FALSE, 
     deleted_at TIMESTAMP,
