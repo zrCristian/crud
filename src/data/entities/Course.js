@@ -30,7 +30,7 @@ module.exports = new EntitySchema({
       type: 'varchar',
       nullable: true,
     },
-    starts: {
+    stars: {
       type: 'float',
       nullable: true,
     },
