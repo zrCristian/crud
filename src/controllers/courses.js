@@ -4,10 +4,10 @@ const {
   getAllCourses,
   saveCourse,
   updateCourse,
-  deleteCourse,
   searchCoursesByName,
 } = require('../data/courses');
 const { defaultValues } = require('../config/constants');
+const courseService = require('../services/CourseService');
 
 function searchCourses(req, res) {
   const page = req.query.page ? (+(req.query.page) - 1) : 0;
@@ -87,7 +87,7 @@ function edit(req, res) {
 }
 
 function deleteById(req, res) {
-  deleteCourse(+req.params.id);
+  courseService.deleteById(+req.params.id);
 
   res.redirect('/cursos');
 }

@@ -1,9 +1,18 @@
 const { Like, In } = require('typeorm');
 
 const { courseRepository } = require('../data/repositories/CourseRepository');
+const NotFoundException = require('../errors/notFoundException');
 
 async function getAll() {
   return courseRepository.find();
+}
+
+async function getById(id) {
+  return courseRepository.find({
+    where: {
+      id,
+    },
+  });
 }
 
 async function getByIds(ids) {
@@ -30,8 +39,23 @@ async function getPaginated(query) {
   return { data, count };
 }
 
+async function deleteById(id) {
+  const course = await getById(id);
+
+  if (!course) {
+    throw new NotFoundException();
+  }
+
+  courseRepository.save({
+    id,
+    isDeleted: true,
+    deletedAt: new Date(),
+  });
+}
+
 module.exports = {
   getAll,
   getPaginated,
   getByIds,
+  deleteById,
 };
