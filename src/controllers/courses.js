@@ -72,9 +72,9 @@ function create(req, res) {
   res.redirect('/cursos');
 }
 
-function editView(req, res) {
+async function editView(req, res) {
   const id = +req.params.id;
-  const course = getCourseById(id);
+  const course = await courseService.getById(+id);
 
   res.render('courses/edit', { course });
 }
