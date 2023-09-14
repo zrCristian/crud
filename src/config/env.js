@@ -33,6 +33,11 @@ const db = {
   DB_LOG_QUERIES: (DB_LOG_QUERIES && DB_LOG_QUERIES === 'true') || false,
 };
 
+const aws = {
+  REGION: process.env.AWS_REGION,
+  S3_BUCKET: process.env.AWS_S3_BUCKET,
+};
+
 function warnUser(secretsObj) {
   Object.entries(secretsObj).forEach(([name, value]) => {
     if (value === DEFAULT_SECRET) {
@@ -47,4 +52,5 @@ module.exports = {
   db,
   secrets,
   appConfig,
+  aws,
 };
