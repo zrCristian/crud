@@ -1,7 +1,6 @@
 const {
   getPaginatedCourses,
   getAllCourses,
-  updateCourse,
   searchCoursesByName,
 } = require('../data/courses');
 const { defaultValues } = require('../config/constants');
@@ -79,7 +78,8 @@ async function editView(req, res) {
 
 function edit(req, res) {
   const id = +req.params.id;
-  updateCourse(id, req.body, req.file?.filename);
+
+  courseService.update(id, req.body, req.file);
 
   res.redirect('/cursos');
 }

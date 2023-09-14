@@ -4,7 +4,6 @@ const {
   isEmail,
 } = require('another-validator');
 const { errors } = require('../../config/constants');
-const usersData = require('../../data/json/users.json');
 
 const nameValidator = new Validator()
   .notNull(errors.notNull)
@@ -19,11 +18,13 @@ function buildEmailValidator() {
     .isEmail(errors.isEmail)
     .notNull(errors.notNull)
     .addRule((email) => isEmail(email))
-    .addRule((email) => {
-      const isUnique = usersData.find((u) => u.email === email) === undefined;
+    .addRule(
+      (email) =>
+      // const isUnique = usersData.find((u) => u.email === email) === undefined;
 
-      return isUnique;
-    }, errors.users.uniqueEmail);
+        true,
+      errors.users.uniqueEmail,
+    );
 }
 
 function buildPasswordValidator(user) {

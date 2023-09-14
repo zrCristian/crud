@@ -38,35 +38,9 @@ function getCoursesByIds(ids) {
   return ids.map((id) => getAllCourses().find((c) => c.id === id));
 }
 
-function updateCourse(courseId, course, imageFileName) {
-  const oldCourse = getCourseById(courseId);
-
-  const updatedCourse = {
-    ...oldCourse,
-    name: course.name,
-    description: course.description,
-    price: +course.price,
-    duration: +course.duration,
-  };
-
-  if (imageFileName) {
-    updateCourse.image = imageFileName;
-  }
-
-  const updateCourses = getAllCourses().map((c) => {
-    if (c.id === courseId) {
-      return updatedCourse;
-    }
-    return c;
-  });
-
-  writeJsonWithNewData('courses.json', JSON.stringify(updateCourses));
-}
-
 module.exports = {
   getAllCourses,
   getCourseById,
-  updateCourse,
   getPaginatedCourses,
   searchCoursesByName,
   getCoursesByIds,
