@@ -2,6 +2,9 @@ const { Like, In } = require('typeorm');
 
 const { courseRepository } = require('../data/repositories/CourseRepository');
 const NotFoundException = require('../errors/notFoundException');
+const { aws } = require('../config/env');
+const s3Service = require('./aws/s3Service');
+const logger = require('../utils/logs/logger');
 
 async function getAll() {
   return courseRepository.find();
@@ -39,6 +42,37 @@ async function getPaginated(query) {
   return { data, count };
 }
 
+async function save(course, courseImage) {
+  const {
+    name,
+    description,
+    price,
+    duration,
+  } = course;
+
+  logger.debug(`creating course ${course.name}`);
+
+  const newCourse = {
+    name,
+    description,
+    price: +price,
+    duration: +duration,
+    image: `${aws.cdnUrl}/courses/${courseImage.filename}`,
+    stars: 0,
+  };
+
+  try {
+    s3Service.saveObject(courseImage.filename, courseImage.buffer);
+    logger.debug('inserting course into db');
+
+    const savedCourse = await courseRepository.save(newCourse);
+
+    logger.debug(`course created with id ${savedCourse.id}`);
+  } catch (error) {
+    logger.error(error);
+  }
+}
+
 async function deleteById(id) {
   const course = await getById(id);
 
@@ -56,6 +90,7 @@ async function deleteById(id) {
 module.exports = {
   getAll,
   getPaginated,
+  save,
   getByIds,
   deleteById,
   getById,

@@ -36,6 +36,7 @@ const db = {
 const aws = {
   REGION: process.env.AWS_REGION,
   S3_BUCKET: process.env.AWS_S3_BUCKET,
+  cdnUrl: process.env.AWS_CDN_URL,
 };
 
 function warnUser(secretsObj) {

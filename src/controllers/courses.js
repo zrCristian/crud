@@ -65,7 +65,7 @@ function createView(req, res) {
 }
 
 function create(req, res) {
-  saveCourse(req.body, req.file.filename);
+  courseService.save(req.body, req.file);
   req.session.courseCreated = true;
 
   res.redirect('/cursos');
