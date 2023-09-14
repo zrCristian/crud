@@ -38,30 +38,6 @@ function getCoursesByIds(ids) {
   return ids.map((id) => getAllCourses().find((c) => c.id === id));
 }
 
-function saveCourse(course, imageFileName) {
-  const {
-    name,
-    description,
-    price,
-    duration,
-  } = course;
-
-  const newCourse = {
-    id: new Date().getTime(),
-    name,
-    description,
-    price: +price,
-    duration: +duration,
-    image: imageFileName,
-    stars: 0,
-  };
-
-  const courses = getAllCourses();
-  courses.push(newCourse);
-
-  writeJsonWithNewData('courses.json', JSON.stringify(courses));
-}
-
 function updateCourse(courseId, course, imageFileName) {
   const oldCourse = getCourseById(courseId);
 
@@ -90,7 +66,6 @@ function updateCourse(courseId, course, imageFileName) {
 module.exports = {
   getAllCourses,
   getCourseById,
-  saveCourse,
   updateCourse,
   getPaginatedCourses,
   searchCoursesByName,
