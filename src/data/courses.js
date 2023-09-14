@@ -1,7 +1,6 @@
 const path = require('path');
 const {
   getDataByJsonName,
-  writeJsonWithNewData,
 } = require('../utils/json');
 const { defaultValues } = require('../config/constants');
 
