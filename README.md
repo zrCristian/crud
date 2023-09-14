@@ -6,12 +6,18 @@ Es un proyecto hecho con:
 * EJS
 * MySQL
 * TypeORM
+* AWS
   
 Hecho para alumnos de Digital House del curso Fullstack (o cualquier persona con interes en estas tecnologías)
 
 ## Como levantar el proyecto en local 
 
 Crear un archivo .env en la raíz del proyecto. Usar example.env como referencia.
+
+### AWS Account 
+
+Las imagenes son almacenadas en un bucket en S3, por lo que es necesario contar con una cuenta en AWS y un bucket en S3.
+El nombre del bucket y la región donde este van en el archivo .env
 
 ### Instalar dependencias 
 
