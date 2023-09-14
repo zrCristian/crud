@@ -1,7 +1,6 @@
 const {
   getPaginatedCourses,
   getAllCourses,
-  saveCourse,
   updateCourse,
   searchCoursesByName,
 } = require('../data/courses');
