@@ -74,9 +74,11 @@ async function save(course, courseImage) {
 }
 
 async function deleteById(id) {
+  logger.debug(`deleting course with id: ${id}`);
   const course = await getById(id);
 
   if (!course) {
+    logger.error(`course with id ${id} does not exists`);
     throw new NotFoundException();
   }
 
@@ -85,6 +87,8 @@ async function deleteById(id) {
     isDeleted: true,
     deletedAt: new Date(),
   });
+
+  logger.debug(`course with id ${id} was deleted`);
 }
 
 module.exports = {
