@@ -15,8 +15,9 @@ const validateCourse = require('../middlewares/validations/courseValidation');
 const router = Router();
 
 const storage = multer.diskStorage({
-  destination(req, file, cb) {
-    cb(null, './public/images/courses');
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024,
   },
   filename(req, file, cb) {
     const extension = file.originalname.split('.')[1];
