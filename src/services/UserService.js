@@ -1,5 +1,7 @@
 const bcrypt = require('bcryptjs');
 const { userRepository } = require('../data/repositories/UserRepository');
+const logger = require('../utils/logs/logger');
+const NotFoundException = require('../errors/notFoundException');
 
 async function getAll() {
   return userRepository.findBy();
@@ -11,6 +13,23 @@ async function findByEmail(email) {
       email,
     },
   });
+}
+
+async function getByEmail(email) {
+  logger.debug(`seaching user with email: ${email}`);
+
+  const user = await userRepository.findOne({
+    where: {
+      email,
+    },
+  });
+
+  if (!user) {
+    logger.error(`user with email ${email} does not exists`);
+    throw new NotFoundException();
+  }
+
+  return user;
 }
 
 async function findById(id) {
@@ -52,6 +71,7 @@ module.exports = {
   getAll,
   findByEmail,
   findById,
+  getByEmail,
   save,
   deleteById,
 };

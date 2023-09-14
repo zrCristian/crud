@@ -4,6 +4,7 @@ const {
   isEmail,
 } = require('another-validator');
 const { errors } = require('../../config/constants');
+const userService = require('../../services/UserService');
 
 const nameValidator = new Validator()
   .notNull(errors.notNull)
@@ -19,10 +20,11 @@ function buildEmailValidator() {
     .notNull(errors.notNull)
     .addRule((email) => isEmail(email))
     .addRule(
-      (email) =>
-      // const isUnique = usersData.find((u) => u.email === email) === undefined;
+      async (email) => {
+        const user = await userService.getByEmail(email);
 
-        true,
+        return user !== undefined;
+      },
       errors.users.uniqueEmail,
     );
 }
