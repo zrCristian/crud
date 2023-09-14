@@ -48,7 +48,7 @@ VALUES
 
 INSERT INTO users (name, lastname, email, password, profile_image, send_notification, is_deleted, role_id) 
 VALUES 
-('German', 'Eichemberger', 'german@admin.com', '$2a$10$eGkFOHoEbbs4y/WbtrCC2uYmmGMxg8AyxSjfnvzbYZKQc4OdBWIG.', 'german.jpg', FALSE, FALSE, 2), 
+('German', 'Eichemberger', 'german@admin.com', '$2a$10$eGkFOHoEbbs4y/WbtrCC2uYmmGMxg8AyxSjfnvzbYZKQc4OdBWIG.', 'german.jpg', FALSE, FALSE, 1), 
 ('Cosmos', 'Kramerica', 'cosmos@kramerica.com', '$2a$10$eGkFOHoEbbs4y/WbtrCC2uYmmGMxg8AyxSjfnvzbYZKQc4OdBWIG.','kramer.jpg', FALSE, FALSE, 2);
 
 INSERT INTO courses_categories (course_id, category_id) 
