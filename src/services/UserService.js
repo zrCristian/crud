@@ -61,11 +61,15 @@ async function save(user) {
 }
 
 async function deleteById(id) {
+  logger.debug(`deleting user with id: ${id}`);
+
   userRepository.save({
     id,
     isDeleted: true,
     deletedAt: new Date(),
   });
+
+  logger.debug(`user with id: ${id} deleted`);
 }
 
 module.exports = {
