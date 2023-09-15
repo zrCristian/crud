@@ -17,7 +17,7 @@ function register(req, res) {
 async function login(req, res) {
   const loginData = req.body;
 
-  const user = await userService.findByEmail(loginData.email);
+  const user = await userService.getByEmail(loginData.email);
 
   if (user && !user.isDeleted && bcrypt.compareSync(loginData.password, user.password)) {
     if (loginData.keepLogged) {
@@ -57,7 +57,7 @@ async function profile(req, res, next) {
   try {
     isUserAllowed(req.session, userId);
 
-    const user = await userService.findById(userId);
+    const user = await userService.getById(userId);
 
     res.render('users/profile', { user });
   } catch (e) {

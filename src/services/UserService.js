@@ -7,14 +7,6 @@ async function getAll() {
   return userRepository.findBy();
 }
 
-async function findByEmail(email) {
-  return userRepository.findOne({
-    where: {
-      email,
-    },
-  });
-}
-
 async function getByEmail(email) {
   logger.debug(`seaching user with email: ${email}`);
 
@@ -32,12 +24,21 @@ async function getByEmail(email) {
   return user;
 }
 
-async function findById(id) {
-  return userRepository.findOne({
+async function getById(id) {
+  logger.debug(`seaching user with id: ${id}`);
+
+  const user = userRepository.findOne({
     where: {
       id,
     },
   });
+
+  if (!user) {
+    logger.error(`user with id ${id} does not exists`);
+    throw new NotFoundException();
+  }
+
+  return user;
 }
 
 async function save(user) {
@@ -69,8 +70,7 @@ async function deleteById(id) {
 
 module.exports = {
   getAll,
-  findByEmail,
-  findById,
+  getById,
   getByEmail,
   save,
   deleteById,
