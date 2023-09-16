@@ -4,6 +4,7 @@ const logger = require('../utils/logs/logger');
 const NotFoundException = require('../errors/notFoundException');
 
 async function getAll() {
+  logger.debug('getting all users');
   return userRepository.findBy();
 }
 
@@ -42,6 +43,8 @@ async function getById(id) {
 }
 
 async function save(user) {
+  logger.debug(`saving new user with email: ${user.email}`);
+
   const sendNotifications = user.sendSpam === 'on';
   const password = bcrypt.hashSync(user.password, 10);
 
