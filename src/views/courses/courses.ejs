@@ -17,9 +17,10 @@
 
   <main class="container mx-auto">
     <div class="flex flex-wrap gap-4 items-center justify-center">
-      <%# Aca van los cursos %>
+      <% courses.forEach(course => { %>
+        <%- include("../components/productCard", {product: course}) %>
+      <% }) %>
     </div>
-
 
   </main>
 

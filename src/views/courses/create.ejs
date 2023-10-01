@@ -12,7 +12,7 @@
     <div class="shadow-xl p-10 rounded max-w-6xl mx-auto mt-10">
       <h2 class="text-2xl mb-5">Crear un curso:</h2>
 
-      <form>
+      <form method="post" action="/cursos" enctype="multipart/form-data">
         <div class="relative z-0 w-full mb-6 group">
             <input type="text" name="name" id="name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
             <label for="name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre del curso</label>
@@ -32,6 +32,14 @@
         <div class="mt-1">
           <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción del curso</label>
           <textarea name="description" id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Descripción"></textarea>  
+        </div>
+        
+        <!-- photo -->
+        <div class="">
+          <label for="">Photo</label>
+          <input type="file" name="image" >
+          
+
         </div>
 
         <div class="mt-3 flex justify-end">

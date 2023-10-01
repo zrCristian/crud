@@ -5,7 +5,12 @@
     "price": 199,
     "stars": 5,
     "image": "saa.png",
-    "categories": ["aws", "cloud", "certificate", "aws associate"],
+    "categories": [
+      "aws",
+      "cloud",
+      "certificate",
+      "aws associate"
+    ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
@@ -14,7 +19,12 @@
     "price": 59,
     "stars": 3,
     "image": "cpf.png",
-    "categories": ["aws", "cloud", "certificate", "aws practicioner"],
+    "categories": [
+      "aws",
+      "cloud",
+      "certificate",
+      "aws practicioner"
+    ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
@@ -23,17 +33,28 @@
     "price": 399,
     "stars": 5,
     "image": "sap.png",
-    "categories": ["aws", "cloud", "certificate", "aws professional"],
+    "categories": [
+      "aws",
+      "cloud",
+      "certificate",
+      "aws professional"
+    ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
     "id": 4,
     "name": "AWS Database Specialty",
-    "price": 399,
-    "stars": 5,
+    "price": "399",
+    "stars": 0,
     "image": "dbs.png",
-    "categories": ["aws", "cloud", "certificate", "aws specialty"],
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
+    "categories": [
+      "aws",
+      "cloud",
+      "certificate",
+      "aws specialty"
+    ],
+    "description": "curso de BASE DE DATOS de principiantes a expertos [40 horas] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. ",
+    "duration": "40"
   },
   {
     "id": 5,
@@ -41,7 +62,11 @@
     "price": 239,
     "stars": 5,
     "image": "kss.png",
-    "categories": ["kubernetes", "certificate", "kubernetes specialty"],
+    "categories": [
+      "kubernetes",
+      "certificate",
+      "kubernetes specialty"
+    ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
@@ -50,7 +75,12 @@
     "price": 299,
     "stars": 5,
     "image": "dep.png",
-    "categories": ["aws", "cloud", "certificate", "aws professional"],
+    "categories": [
+      "aws",
+      "cloud",
+      "certificate",
+      "aws professional"
+    ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
@@ -59,7 +89,12 @@
     "price": 199,
     "stars": 5,
     "image": null,
-    "categories": ["aws", "cloud", "certificate", "aws associate"],
+    "categories": [
+      "aws",
+      "cloud",
+      "certificate",
+      "aws associate"
+    ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at velit eget nunc convallis congue. Phasellus consequat mattis velit, in placerat nisl placerat in. Aenean ultricies semper arcu ac aliquet. Ut neque urna, egestas ut condimentum a, tincidunt quis massa. Sed vestibulum tempor sem id bibendum. Cras quis urna elit. Praesent quis est neque. In eros turpis, lobortis et lectus in, pellentesque luctus odio. Curabitur sodales elementum scelerisque."
   },
   {
@@ -68,7 +103,11 @@
     "price": 299,
     "stars": 4.5,
     "image": null,
-    "categories": ["google cloud", "cloud", "certificate"],
+    "categories": [
+      "google cloud",
+      "cloud",
+      "certificate"
+    ],
     "description": "This course helps you design, develop and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives."
   },
   {
@@ -77,7 +116,11 @@
     "price": 199,
     "stars": 4.5,
     "image": null,
-    "categories": ["azure", "cloud", "certificate"],
+    "categories": [
+      "azure",
+      "cloud",
+      "certificate"
+    ],
     "description": "Learn how to manage and maintain the infrastructure for the core web apps and services that developers build and deploy."
   },
   {
@@ -86,7 +129,12 @@
     "price": 199,
     "stars": 5,
     "image": null,
-    "categories": ["aws", "cloud", "operations", "certificate"],
+    "categories": [
+      "aws",
+      "cloud",
+      "operations",
+      "certificate"
+    ],
     "description": "This course is designed to teach those in a Systems Administrator role how to operate within the AWS ecosystem."
   },
   {
@@ -95,7 +143,12 @@
     "price": 249,
     "stars": 4,
     "image": null,
-    "categories": ["google cloud", "cloud", "networking", "certificate"],
+    "categories": [
+      "google cloud",
+      "cloud",
+      "networking",
+      "certificate"
+    ],
     "description": "Dive deep into the nuances of networking in the Google Cloud platform and enhance your knowledge of global, regional and zonal resources."
   },
   {
@@ -104,7 +157,12 @@
     "price": 229,
     "stars": 4.5,
     "image": null,
-    "categories": ["azure", "cloud", "development", "certificate"],
+    "categories": [
+      "azure",
+      "cloud",
+      "development",
+      "certificate"
+    ],
     "description": "Learn about the development side of Azure. From creating apps and solutions to integrating with other Azure services."
   },
   {
@@ -113,7 +171,11 @@
     "price": 299,
     "stars": 4.7,
     "image": null,
-    "categories": ["comptia", "cloud", "certificate"],
+    "categories": [
+      "comptia",
+      "cloud",
+      "certificate"
+    ],
     "description": "CompTIA Cloud+ covers the increased diversity of knowledge, skills and abilities required of system administrators to validate what is necessary to perform effectively in data center jobs. It includes the new technologies to support the changing cloud market."
   },
   {
@@ -122,7 +184,48 @@
     "price": 179,
     "stars": 4.9,
     "image": null,
-    "categories": ["python", "aws", "boto3", "development"],
+    "categories": [
+      "python",
+      "aws",
+      "boto3",
+      "development"
+    ],
     "description": "Delve into the world of AWS automation with Python's Boto3 library. From setting up AWS resources to querying and maintaining them, this course provides a comprehensive insight into how Python can be used to manage AWS resources effectively and efficiently."
+  },
+  {
+    "name": "GO  [Profesional]",
+    "price": "120",
+    "duration": "31",
+    "description": "",
+    "stars": 0,
+    "id": 15,
+    "image": "1695691503850-img.png"
+  },
+  {
+    "name": "CA completo!!",
+    "price": "999",
+    "duration": "110",
+    "description": "",
+    "id": 16,
+    "image": "1695690416433-img.png",
+    "stars": 0
+  },
+  {
+    "name": "TypeScript",
+    "price": 222,
+    "duration": 40,
+    "description": "curso de javascript y TypeScript",
+    "stars": 0,
+    "id": 17,
+    "image": "1695691606580-img.png"
+  },
+  {
+    "name": "prueba",
+    "price": 21,
+    "duration": 21,
+    "description": "d",
+    "stars": 0,
+    "id": 18,
+    "image": ""
   }
 ]
